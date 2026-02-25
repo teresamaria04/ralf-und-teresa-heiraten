@@ -1,4 +1,242 @@
-<div class="parallax-image" style="background-image: url('Einjähriges.jpg');"></div>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teresa & Ralf – Hochzeit</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="access" id="gate">
+  <h1>Willkommen</h1>
+  <input type="password" id="pw" placeholder="Zugangscode">
+  <button onclick="openSite()">Weiter</button>
+</div>
+
+<div id="main" style="display:none;">
+
+<header class="hero" style="background-image:url('images/hero.jpg');">
+  <div class="shade"></div>
+  <h1 class="title">Teresa & Ralf</h1>
+  <p class="sub">26. September 2026 · Kevelaer</p>
+</header>
+
+<section class="content">
+
+<h2>Unsere Geschichte</h2>
+<p><strong>Kennenlernen:</strong><br><br>
+In einem Loch im Boden, da lebte ein Ralf.<br>
+In einem feuchten, schmutzigen Loch, wo es nach Moder riecht und Wurmzipfel von den Wänden herabhängen.<br><br>
+Neee Spaaaß :D<br><br>
+Alles begann vor langer Zeit in einer weit, weit entfernten Galaxis in einer Höhle in Münster (adH).
+Da entschloss sich ein Ralf: "Ich ziehe in ein Abenteuer!".<br><br>
+Derweil erschallten aus Gohrdor die Worte: „Kevelaer! Ehemann!", welche Gollum*ine krächzend von sich gab.
+So geschah es, dass Teresa am dritten Tage gen Osten schaute und ihren -noch unbekannten- Helden im Sonnenlicht erstrahlen sah...<br><br>
+Ob das bei Euch genau so damals war?<br>
+I doubt it !<br><br>
+
+<strong>Zusammenkommen:</strong><br><br>
+Nach einer langen Phase der Kontaktlosigkeit zog Ralf eines Tages für die Arbeit nach Köln. Dadurch sahen sich die beiden häufiger und ihr Verhältnis zueinander verbesserte sich.
+Nach dem sich die beiden auf der Geburtstagsfeier von Ralf ausgesprochen hatten, war die Spannung verschwunden und sie nahmen in Freundschaft Kontakt zueinander auf.
+Teresa bombardierte Ralf nur so mit Star Wars Reels - ohne es jemals geguckt zu haben.<br><br>
+Schließlich einigten sich die beiden auf einen Filmabend bei welchem Ralf seine Gefühle für Teresa gestand.
+Diese war völlig perplex und vertröstete den liebenswürdigen Ralf.
+Kurz drauf - als Teresa sich gesammelt hatte und sich einen klaren Kopf gefasst hatte - trafen sich die beiden um sich erneut auszusprechen.
+Dabei entschlossen sie sich in die Dating-Phase zu begeben.
+Keine Woche später fand nun also ihr erstes offizielles Date statt bei dem Sie Erdbeeren pflücken gingen.
+Am Abend wurde dann ein weiterer Star Wars Teil geschaut, doch Teresa hatte nur Augen für Ralf.
+Daraufhin redeten die beiden und beschlossen es miteinander zu probieren.<br><br>
+
+<strong>Verlauf:</strong><br><br>
+Über die Zeit hinweg merkten die beiden schnell, wie gut Sie doch zueinander passten und wie sehr Sie sich liebten.
+Schnell war klar: wir werden heiraten!
+Doch offiziell dauerte es noch eine gaaaanze Weile, welche Teresa echtes Kopfzerbrechen bescherte.
+Letzten Endes machte Ralf Ihr den perfekten Antrag am perfekten Ort.
+</p>
+
+</section>
+
+<img src="images/about.jpg" class="divider">
+
+<section class="content">
+
+<h2>Ablauf</h2>
+<div class="schedule">
+<p><span class="time">12:15 Uhr</span><br>Eintrudeln</p>
+<p><span class="time">12:30 Uhr</span><br>Trauung + Hl. Messe</p>
+<p><span class="time">15:00 –<br>17:30 Uhr</span><br>Sektempfang mit Kaffee, Kuchen & Kanapees</p>
+<p><span class="time">18:00 Uhr</span><br>Abendessen mit Programm</p>
+<p><span class="time">22:00 Uhr</span><br>First Dance & Party</p>
+</div>
+
+</section>
+
+<img src="images/church.jpg" class="divider">
+
+<section class="content">
+
+<h2>Ankunft</h2>
+<p><strong>Trauung:</strong><br>
+Basilika in Kevelaer<br>
+Kapellenpl. 35, 47623 Kevelaer</p>
+
+<p><strong>Parkmöglichkeiten:</strong><br>
+Basilikastraße 2, 47623 Kevelaer<br>
+Am Bhf 55, 47623 Kevelaer</p>
+
+</section>
+
+<footer>
+<p>Mit Liebe gestaltet · Teresa & Ralf</p>
+</footer>
+
+</div>
+    <script src="script.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hochzeit von Teresa und Ralf</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f7f4;
+        }
+        header {
+            background: linear-gradient(135deg, #d4a5a5 0%, #9d7e8f 100%);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+        section {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #8b6f7c;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-bottom: 2px solid #d4a5a5;
+            padding-bottom: 10px;
+        }
+        p {
+            margin: 15px 0;
+            font-size: 1.1em;
+        }
+        .parallax-image {
+            width: 100%;
+            height: 400px;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            margin: 40px 0;
+            border-radius: 8px;
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
+        .image-fade {
+            max-width: 100%;
+            height: auto;
+            margin: 30px 0;
+            border-radius: 8px;
+            opacity: 1;
+        }
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: #8b6f7c;
+            color: white;
+            margin-top: 60px;
+        }
+        a {
+            color: #d4a5a5;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2em;
+            }
+            section {
+                margin: 20px;
+                padding: 20px;
+            }
+            .parallax-image {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>💒 Hochzeit von Teresa und Ralf 💒</h1>
+        <p>26. September 2026</p>
+    </header>
+
+    <section>
+        <h2>Ablauf des Tages</h2>
+        <p><strong>12:30 Uhr</strong> - TRAUUNG</p>
+        <p><strong>14:30 - 17:30 Uhr</strong> - SEKTEMPFANG</p>
+        <p><strong>17:30 Uhr</strong> - ORTSWECHSEL</p>
+        <p><strong>18:00 Uhr</strong> - EINLASS KAMPER HOF</p>
+        <p><strong>18:30 Uhr</strong> - ABENDESSEN</p>
+        <p><strong>21:30 Uhr</strong> - ERÖFFNUNGSTANZ</p>
+        <p><strong>22:00 Uhr</strong> - HOCHZEITSTORTE</p>
+        <p><strong>24:00 Uhr</strong> - MITTERNACHTSSNACK</p>
+    </section>
+
+    <section>
+        <h2>Adressen & Locations</h2>
+        <h3>Trauung</h3>
+        <p><strong>Marienbasilika</strong><br>
+        Kapellenpl. 35, 47623 Kevelaer</p>
+        
+        <h3>Sektempfang (bis ca. 17:30 Uhr)</h3>
+        <p><strong>Josef–Schotten–Schützenhalle</strong><br>
+        Twistedener Str. 285, 47623 Kevelaer</p>
+
+        <h3>Feier</h3>
+        <p><strong>Kamper Hof</strong><br>
+        Kamper Str. 8, 47495 Rheinberg</p>
+
+        <h3>Parkmöglichkeiten - Trauung</h3>
+        <p>Basilikastraße 2, 47623 Kevelaer<br>
+        Am bhf 55, 47623 Kevelaer</p>
+
+        <h3>Parkmöglichkeit - Feier</h3>
+        <p>Parkplatz am Kräuterturm<br>
+        Kamperstraße 21<br>
+        (kostenlose Entwertung in der Location)</p>
+
+        <h3>Übernachtungsmöglichkeit</h3>
+        <p><strong>Hotel Am Fischmarkt</strong><br>
+        Fischmarkt 2–5, 47495 Rheinberg<br>
+        Stichwort: Gunderloch</p>
+    </section>
+    <div class="parallax-image" style="background-image: url('Einjähriges.jpg');"></div>
 
     <section>
         <h2>Dresscode</h2>
