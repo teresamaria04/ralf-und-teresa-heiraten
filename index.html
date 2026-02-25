@@ -63,7 +63,7 @@ header.hero {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    height: 800px;
+    height: 70vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -71,6 +71,8 @@ header.hero {
     color: white;
     text-align: center;
     position: relative;
+    min-height: 500px;
+    max-height: 800px;
 }
 .shade {
     position: absolute;
@@ -85,12 +87,12 @@ header h1, header p {
     z-index: 1;
 }
 .title {
-    font-size: 4em;
+    font-size: clamp(2em, 5vw, 4em);
     font-weight: 600;
     margin-bottom: 10px;
 }
 .sub {
-    font-size: 1.3em;
+    font-size: clamp(1em, 2vw, 1.3em);
 }
 .content {
     max-width: 900px;
@@ -136,20 +138,25 @@ header h1, header p {
 }
 .divider {
     width: 100%;
-    height: 700px;
+    height: auto;
+    aspect-ratio: 16 / 9;
     object-fit: cover;
-    margin: 80px 0;
+    margin: 80px auto;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(45, 71, 45, 0.2);
+    max-width: 1200px;
+    display: block;
 }
 .parallax-image {
     width: 100%;
-    height: 700px;
+    height: auto;
+    aspect-ratio: 16 / 9;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    margin: 80px 0;
+    margin: 80px auto;
     border-radius: 8px;
+    max-width: 1200px;
 }
 footer {
     text-align: center;
@@ -183,22 +190,74 @@ a:hover {
     background: linear-gradient(135deg, #3D5A3D 0%, #4A6B4A 100%);
     box-shadow: 0 4px 10px rgba(45, 71, 45, 0.3);
 }
-@media (max-width: 600px) {
-    .title {
-        font-size: 2.5em;
-    }
+
+/* Tablet */
+@media (max-width: 1024px) {
     .content {
-        margin: 20px;
-        padding: 20px;
-    }
-    .divider {
-        height: 450px;
-    }
-    .parallax-image {
-        height: 450px;
+        margin: 40px auto;
+        padding: 30px;
     }
     header.hero {
-        height: 500px;
+        height: 60vh;
+    }
+}
+
+/* Handy */
+@media (max-width: 768px) {
+    .title {
+        font-size: clamp(1.5em, 4vw, 2.5em);
+    }
+    .sub {
+        font-size: clamp(0.9em, 1.5vw, 1.1em);
+    }
+    .content {
+        margin: 30px auto;
+        padding: 20px;
+        border-radius: 5px;
+    }
+    .content h2 {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+    }
+    .content p {
+        font-size: 1em;
+    }
+    .divider {
+        margin: 60px auto;
+        border-radius: 5px;
+    }
+    header.hero {
+        height: 50vh;
+        min-height: 400px;
+    }
+    .schedule {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Kleine Handys */
+@media (max-width: 480px) {
+    .access h1 {
+        font-size: 1.8em;
+    }
+    .access input {
+        width: 100%;
+        max-width: 100%;
+    }
+    .content {
+        margin: 20px auto;
+        padding: 15px;
+    }
+    .content h2 {
+        font-size: 1.5em;
+        margin-bottom: 15px;
+    }
+    .divider {
+        margin: 40px auto;
+    }
+    header.hero {
+        height: 45vh;
+        min-height: 350px;
     }
 }
 </style>
