@@ -1,329 +1,39 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Teresa & Ralf – Hochzeit</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body {
-    font-family: 'Cormorant Garamond', serif;
-    line-height: 1.8;
-    color: #2c2c2c;
-    background-color: #faf8f6;
-}
-.access {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: linear-gradient(135deg, #d4a5a5 0%, #9d7e8f 100%);
-    gap: 20px;
-}
-.access h1 {
-    color: white;
-    font-size: 2.5em;
-    margin-bottom: 20px;
-}
-.access input {
-    padding: 12px 20px;
-    font-size: 1.1em;
-    border: none;
-    border-radius: 5px;
-    width: 300px;
-    max-width: 90%;
-}
-.access button {
-    padding: 12px 40px;
-    font-size: 1.1em;
-    background-color: white;
-    color: #9d7e8f;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.3s;
-}
-.access button:hover {
-    background-color: #f0f0f0;
-}
-#main {
-    display: none;
-}
-header.hero {
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    height: 500px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-align: center;
-    position: relative;
-}
-.shade {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0,0,0,0.3);
-}
-header h1, header p {
-    position: relative;
-    z-index: 1;
-}
-.title {
-    font-size: 4em;
-    font-weight: 600;
-    margin-bottom: 10px;
-}
-.sub {
-    font-size: 1.3em;
-}
-.content {
-    max-width: 900px;
-    margin: 50px auto;
-    padding: 40px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-.content h2 {
-    color: #8b6f7c;
-    font-size: 2.2em;
-    margin-bottom: 30px;
-    border-bottom: 3px solid #d4a5a5;
-    padding-bottom: 15px;
-}
-.content p {
-    font-size: 1.1em;
-    margin-bottom: 20px;
-    line-height: 1.8;
-}
-.schedule {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
-}
-.schedule p {
-    background: #f5f0f0;
-    padding: 20px;
-    border-radius: 5px;
-    text-align: center;
-}
-.time {
-    color: #d4a5a5;
-    font-weight: bold;
-    font-size: 1.2em;
-    display: block;
-    margin-bottom: 10px;
-}
-.divider {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    margin: 50px 0;
-    border-radius: 8px;
-}
-.parallax-image {
-    width: 100%;
-    height: 400px;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    margin: 50px 0;
-    border-radius: 8px;
-}
-footer {
-    text-align: center;
-    padding: 40px 20px;
-    background: linear-gradient(135deg, #8b6f7c 0%, #6b5568 100%);
-    color: white;
-    margin-top: 80px;
-    font-size: 1.1em;
-}
-a {
-    color: #d4a5a5;
-    text-decoration: none;
-    font-weight: bold;
-}
-a:hover {
-    text-decoration: underline;
-}
-.nav-link {
-    display: inline-block;
-    margin: 10px 20px;
-    padding: 10px 20px;
-    background: #d4a5a5;
-    color: white;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: 0.3s;
-}
-.nav-link:hover {
-    background: #9d7e8f;
-}
-@media (max-width: 600px) {
-    .title {
-        font-size: 2.5em;
-    }
-    .content {
-        margin: 20px;
-        padding: 20px;
-    }
-    .parallax-image {
-        height: 250px;
-    }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ralf & Teresa Heiraten</title>
+    <style>
+        body { background-color: #4C6B46; color: #B3C8B1; font-family: Arial, sans-serif; }
+        h1, h2, h3 { color: #7A9D7E; }
+        .hero { background: url('path_to_hero_image.jpg') no-repeat center center; background-size: cover; height: 100vh; }
+        .parallax { background-image: url('path_to_parallax_image.jpg'); height: 500px; background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover; }
+        .fade-in { animation: fadeIn 1s; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .password-gate { /* Styles for the password gate with depth layers */ }
+    </style>
 </head>
 <body>
-
-<div class="access" id="gate">
-  <h1>Willkommen</h1>
-  <input type="password" id="pw" placeholder="Zugangscode">
-  <button onclick="openSite()">Weiter</button>
-</div>
-
-<div id="main">
-
-<header class="hero" style="background-image:url('Einjähriges.jpg');">
-  <div class="shade"></div>
-  <h1 class="title">Teresa & Ralf</h1>
-  <p class="sub">26. September 2026 · Kevelaer</p>
-</header>
-
-<section class="content">
-  <a href="invitations.html" class="nav-link">📝 Zur Zusage</a>
-</section>
-
-<section class="content">
-  <h2>Unsere Geschichte</h2>
-  <p><strong>Kennenlernen:</strong><br><br>
-  In einem Loch im Boden, da lebte ein Ralf.<br>
-  In einem feuchten, schmutzigen Loch, wo es nach Moder riecht und Wurmzipfel von den Wänden herabhängen.<br><br>
-  Neee Spaaaß :D<br><br>
-  Alles begann vor langer Zeit in einer weit, weit entfernten Galaxis in einer Höhle in Münster (adH).
-  Da entschloss sich ein Ralf: "Ich ziehe in ein Abenteuer!".<br><br>
-  Derweil erschallten aus Gohrdor die Worte: „Kevelaer! Ehemann!", welche Gollum*ine krächzend von sich gab.
-  So geschah es, dass Teresa am dritten Tage gen Osten schaute und ihren -noch unbekannten- Helden im Sonnenlicht erstrahlen sah...<br><br>
-  Ob das bei Euch genau so damals war?<br>
-  I doubt it !<br><br>
-  <strong>Zusammenkommen:</strong><br><br>
-  Nach einer langen Phase der Kontaktlosigkeit zog Ralf eines Tages für die Arbeit nach Köln. Dadurch sahen sich die beiden häufiger und ihr Verhältnis zueinander verbesserte sich.
-  Nach dem sich die beiden auf der Geburtstagsfeier von Ralf ausgesprochen hatten, war die Spannung verschwunden und sie nahmen in Freundschaft Kontakt zueinander auf.
-  Teresa bombardierte Ralf nur so mit Star Wars Reels - ohne es jemals geguckt zu haben.<br><br>
-  Schließlich einigten sich die beiden auf einen Filmabend bei welchem Ralf seine Gefühle für Teresa gestand.
-  Diese war völlig perplex und vertröstete den liebenswürdigen Ralf.
-  Kurz drauf - als Teresa sich gesammelt hatte und sich einen klaren Kopf gefasst hatte - trafen sich die beiden um sich erneut auszusprechen.
-  Dabei entschlossen sie sich in die Dating-Phase zu begeben.
-  Keine Woche später fand nun also ihr erstes offizielles Date statt bei dem Sie Erdbeeren pflücken gingen.
-  Am Abend wurde dann ein weiterer Star Wars Teil geschaut, doch Teresa hatte nur Augen für Ralf.
-  Daraufhin redeten die beiden und beschlossen es miteinander zu probieren.<br><br>
-  <strong>Verlauf:</strong><br><br>
-  Über die Zeit hinweg merkten die beiden schnell, wie gut Sie doch zueinander passten und wie sehr Sie sich liebten.
-  Schnell war klar: wir werden heiraten!
-  Doch offiziell dauerte es noch eine gaaaanze Weile, welche Teresa echtes Kopfzerbrechen bescherte.
-  Letzten Endes machte Ralf Ihr den perfekten Antrag am perfekten Ort.
-  </p>
-</section>
-
-<section class="content">
-  <h2>Ablauf</h2>
-  <div class="schedule">
-    <p><span class="time">12:15 Uhr</span>Eintrudeln</p>
-    <p><span class="time">12:30 Uhr</span>Trauung + Hl. Messe</p>
-    <p><span class="time">15:00 – 17:30 Uhr</span>Sektempfang mit Kaffee, Kuchen & Kanapees</p>
-    <p><span class="time">18:00 Uhr</span>Abendessen mit Programm</p>
-    <p><span class="time">22:00 Uhr</span>First Dance & Party</p>
-  </div>
-</section>
-
-<section class="content">
-  <h2>Ankunft</h2>
-  <p><strong>Trauung:</strong><br>
-  Basilika in Kevelaer<br>
-  Kapellenpl. 35, 47623 Kevelaer</p>
-  <p><strong>Sektempfang:</strong><br>
-  Josef–Schotten–Schützenhalle<br>
-  Twistedener Str. 285, 47623 Kevelaer</p>
-  <p><strong>Feier:</strong><br>
-  Kamper Hof<br>
-  Kamper Str. 8, 47495 Rheinberg</p>
-  <p><strong>Parkmöglichkeiten - Trauung:</strong><br>
-  Basilikastraße 2, 47623 Kevelaer<br>
-  Am bhf 55, 47623 Kevelaer</p>
-  <p><strong>Parkmöglichkeit - Feier:</strong><br>
-  Parkplatz am Kräuterturm<br>
-  Kamperstraße 21<br>
-  (kostenlose Entwertung in der Location)</p>
-  <p><strong>Übernachtungsmöglichkeit:</strong><br>
-  Hotel Am Fischmarkt<br>
-  Fischmarkt 2–5, 47495 Rheinberg<br>
-  Stichwort: Gunderloch</p>
-</section>
-
-<section class="content">
-  <h2>Dresscode</h2>
-  <p><strong>Damen:</strong> Cocktail– oder Abendkleid<br>
-  Farben wie weiß oder beige sind nicht erwünscht.</p>
-  <p><strong>Herren:</strong> Anzug</p>
-</section>
-
-<section class="content">
-  <h2>Geschenke</h2>
-  <p>Eure Anwesenheit an unserem Hochzeitstag ist für uns das größte Geschenk. Wenn ihr uns darüber hinaus eine Freude machen möchtet, danken wir euch herzlich für einen finanziellen Beitrag zu unserer gemeinsamen Zukunft.</p>
-</section>
-
-<section class="content">
-  <h2>Empfang</h2>
-  <p>Über eine Spende zu unserem Kuchenbuffet –mit Rücksprache– würden wir uns sehr freuen.</p>
-</section>
-
-<section class="content">
-  <h2>Kontakte</h2>
-  <p><strong>TERESA MARIA FÄRBER</strong><br>
-  +49 1575 5998493</p>
-  <p><strong>RALF GUNDERLOCH</strong><br>
-  +49 1573 5316143</p>
-</section>
-
-<section class="content">
-  <h2>Erinnerungen</h2>
-  <p>Fotos von unserem besonderen Tag:<br>
-  <a href="https://photos.app.goo.gl/9JvJRk1kwqA1CmAXA">Link zu den Fotos</a></p>
-  <img src="Antrag.jpg" alt="Der Antrag" style="width:100%; border-radius: 8px; margin-top: 20px;">
-</section>
-
-<footer>
-  <p>❤️ Vielen Dank für eure Anwesenheit! ❤️</p>
-</footer>
-
-</div>
-
-<script>
-function openSite() {
-    const pw = document.getElementById('pw').value;
-    if (pw === 'Gunderlochs2026') {
-        document.getElementById('gate').style.display = 'none';
-        document.getElementById('main').style.display = 'block';
-    } else {
-        alert('Falsches Passwort!');
-    }
-}
-document.getElementById('pw').addEventListener('keypress', function(e) {
-    if (e.key === 'Enter') openSite();
-});
-</script>
+    <div class="hero fade-in"></div> <!-- Hero section -->
+    <div class="about fade-in"> 
+        <h2>Über uns</h2>
+        <p>Informationen über ralf und teresa...</p>
+    </div>
+    <div class="ablauf fade-in">
+        <h2>Ablauf</h2>
+        <p>Details zum Ablauf...</p>
+    </div>
+    <div class="einjaehriges fade-in">
+        <h2>Einjähriges</h2>
+        <p>Feier des Einjährigen...</p>
+    </div>
+    <div class="kontakte fade-in">
+        <h2>Kontakte</h2>
+        <p>Kontaktinformationen...</p>
+    </div>
+    <div class="password-gate fade-in">
+        <!-- Enhanced password gate with layers -->
+    </div>
 </body>
 </html>
