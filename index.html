@@ -1,3 +1,59 @@
+<div class="parallax-image" style="background-image: url('Einjähriges.jpg');"></div>
+
+    <section>
+        <h2>Dresscode</h2>
+        <p><strong>Damen:</strong> Cocktail– oder Abendkleid<br>
+        Farben wie weiß oder beige sind nicht erwünscht.</p>
+        <p><strong>Herren:</strong> Anzug</p>
+    </section>
+
+    <section>
+        <h2>Geschenke</h2>
+        <p>Eure Anwesenheit an unserem Hochzeitstag ist für uns das größte Geschenk. Wenn ihr uns darüber hinaus eine Freude machen möchtet, danken wir euch herzlich für einen finanziellen Beitrag zu unserer gemeinsamen Zukunft.</p>
+    </section>
+
+    <section>
+        <h2>Empfang</h2>
+        <p>Über eine Spende zu unserem Kuchenbuffet –mit Rücksprache– würden wir uns sehr freuen.</p>
+    </section>
+
+    <section>
+        <h2>Kontakte</h2>
+        <p><strong>TERESA MARIA FÄRBER</strong><br>
+        +49 1575 5998493</p>
+        <p><strong>RALF GUNDERLOCH</strong><br>
+        +49 1573 5316143</p>
+    </section>
+
+    <section>
+        <h2>Erinnerungen</h2>
+        <p>Erinnerungen an diesen besonderen Tag:<br>
+        <a href="https://photos.app.goo.gl/9JvJRk1kwqA1CmAXA">Link zu den Erinnerungen</a></p>
+        <img src="Antrag.jpg" alt="Der Antrag" class="image-fade">
+    </section>
+
+    <footer>
+        <p>❤️ Vielen Dank für eure Anwesenheit! ❤️</p>
+    </footer>
+
+    <script>
+        // Parallax fade-out effect
+        window.addEventListener('scroll', function() {
+            const parallaxElements = document.querySelectorAll('.parallax-image');
+            parallaxElements.forEach(el => {
+                const scrollPosition = window.scrollY;
+                const elementPosition = el.offsetTop;
+                const distance = elementPosition - scrollPosition;
+                
+                if (distance < window.innerHeight) {
+                    const opacity = Math.max(0, 1 - (Math.abs(distance) / window.innerHeight));
+                    el.style.opacity = opacity;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
 <!DOCTYPE html>
 <html lang="de">
 <head>
