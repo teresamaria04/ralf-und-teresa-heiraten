@@ -42,11 +42,11 @@ body {
     color: #2D472D;
 }
 .access button {
-    padding: 12px 40px;
-    font-size: 2.5em;
+    padding: 8px 24px;
+    font-size: 1.2em;
     background-color: transparent;
     color: white;
-    border: none;
+    border: 2px solid white;
     border-radius: 5px;
     cursor: pointer;
     font-weight: 600;
@@ -55,6 +55,7 @@ body {
 }
 .access button:hover {
     color: #E8F0E8;
+    border-color: #E8F0E8;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 #main {
@@ -162,7 +163,7 @@ header h1, header p {
 }
 .schedule {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
     margin-top: 20px;
 }
@@ -176,10 +177,44 @@ header h1, header p {
 .time {
     color: #2D472D;
     font-weight: bold;
-    font-size: 1.2em;
+    font-size: 1.1em;
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
+.schedule p:last-child {
+    grid-column: 1 / -1;
+}
+
+.address-block {
+    margin-bottom: 25px;
+}
+.address-block strong {
+    color: #2D472D;
+    font-size: 1.1em;
+    display: block;
+    margin-bottom: 5px;
+}
+.address-block p {
+    margin: 0;
+    font-size: 1em;
+    margin-bottom: 3px;
+}
+
+.story-section {
+    margin-bottom: 25px;
+}
+.story-section strong {
+    color: #2D472D;
+    font-size: 1.15em;
+    display: block;
+    margin-bottom: 8px;
+}
+.story-section p {
+    margin: 0;
+    font-size: 1.05em;
+    line-height: 1.6;
+}
+
 .divider {
     width: 100%;
     height: 100vh;
@@ -278,7 +313,7 @@ a:hover {
         grid-template-columns: 1fr;
     }
     .access button {
-        font-size: 1.8em;
+        font-size: 1.3em;
     }
     .toc-list {
         grid-template-columns: 1fr;
@@ -295,7 +330,8 @@ a:hover {
         max-width: 100%;
     }
     .access button {
-        font-size: 1.5em;
+        font-size: 1.1em;
+        padding: 6px 18px;
     }
     .content {
         margin: 20px auto;
@@ -338,14 +374,14 @@ a:hover {
   <h2>📑 Übersicht</h2>
   <div class="toc-list">
     <div class="toc-item"><a href="#zusage">✉️ Zur Zusage</a></div>
-    <div class="toc-item"><a href="#erinnerungen">📷 Erinnerungen</a></div>
+    <div class="toc-item"><a href="#erinnerungen">📸 Erinnerungen</a></div>
     <div class="toc-item"><a href="#ablauf">🕐 Ablauf</a></div>
     <div class="toc-item"><a href="#adressen">📍 Adressen</a></div>
-    <div class="toc-item"><a href="#dresscode">👗 Dresscode</a></div>
-    <div class="toc-item"><a href="#empfang">🍰 Empfang</a></div>
-    <div class="toc-item"><a href="#geschenke">🎁 Geschenke</a></div>
+    <div class="toc-item"><a href="#dresscode">💚 Dresscode</a></div>
+    <div class="toc-item"><a href="#kuchen">🍰 Kuchenbuffet</a></div>
+    <div class="toc-item"><a href="#geschenke">🎀 Geschenke</a></div>
     <div class="toc-item"><a href="#geschichte">🤍 Unsere Geschichte</a></div>
-    <div class="toc-item"><a href="#kontakte">☎️ Kontakte</a></div>
+    <div class="toc-item"><a href="#kontakte">📱 Kontakte</a></div>
   </div>
 </section>
 
@@ -357,7 +393,7 @@ a:hover {
 <!-- ERINNERUNGEN -->
 <section class="content" id="erinnerungen">
   <h2>Erinnerungen</h2>
-  <p>Fotos von unserem besonderen Tag:<br>
+  <p>Fotos und Videos von unserem besonderen Tag:<br>
   <a href="https://photos.app.goo.gl/9JvJRk1kwqA1CmAXA">Link zu den Fotos</a></p>
 </section>
 
@@ -365,37 +401,53 @@ a:hover {
 <section class="content" id="ablauf">
   <h2>Ablauf</h2>
   <div class="schedule">
-    <p><span class="time">12:15 Uhr</span>Eintrudeln</p>
-    <p><span class="time">12:30 Uhr</span>Trauung + Hl. Messe</p>
-    <p><span class="time">15:00 – 17:30 Uhr</span>Sektempfang mit Kaffee, Kuchen & Kanapees</p>
-    <p><span class="time">18:00 Uhr</span>Abendessen mit Programm</p>
-    <p><span class="time">22:00 Uhr</span>First Dance & Party</p>
+    <p><span class="time">12:30 Uhr</span>Eintrudeln</p>
+    <p><span class="time">12:30 Uhr</span>TRAUUNG</p>
+    <p><span class="time">14:30 – 17:30 Uhr</span>SEKTEMPFANG</p>
+    <p><span class="time">17:30 Uhr</span>ORTSWECHSEL</p>
+    <p><span class="time">18:00 Uhr</span>EINLASS KAMPER HOF</p>
+    <p><span class="time">18:30 Uhr</span>ABENDESSEN mit Programm</p>
+    <p><span class="time">21:30 Uhr</span>ERÖFFNUNGSTANZ</p>
+    <p><span class="time">22:00 Uhr</span>HOCHZEITSTORTE</p>
+    <p><span class="time">24:00 Uhr</span>MITTERNACHTSSNACK</p>
   </div>
 </section>
 
 <!-- ADRESSEN -->
 <section class="content" id="adressen">
   <h2>Adressen</h2>
-  <p><strong>Trauung:</strong><br>
-  Basilika in Kevelaer<br>
-  Kapellenpl. 35, 47623 Kevelaer</p>
-  <p><strong>Sektempfang:</strong><br>
-  Josef–Schotten–Schützenhalle<br>
-  Twistedener Str. 285, 47623 Kevelaer</p>
-  <p><strong>Feier:</strong><br>
-  Kamper Hof<br>
-  Kamper Str. 8, 47495 Rheinberg</p>
-  <p><strong>Parkmöglichkeiten - Trauung:</strong><br>
-  Basilikastraße 2, 47623 Kevelaer<br>
-  Am bhf 55, 47623 Kevelaer</p>
-  <p><strong>Parkmöglichkeit - Feier:</strong><br>
-  Parkplatz am Kräuterturm<br>
-  Kamperstraße 21<br>
-  (kostenlose Entwertung in der Location)</p>
-  <p><strong>Übernachtungsmöglichkeit:</strong><br>
-  Hotel Am Fischmarkt<br>
-  Fischmarkt 2–5, 47495 Rheinberg<br>
-  Stichwort: Gunderloch</p>
+  <div class="address-block">
+    <strong>Trauung:</strong>
+    <p>Basilika in Kevelaer</p>
+    <p>Kapellenpl. 35, 47623 Kevelaer</p>
+  </div>
+  <div class="address-block">
+    <strong>Sektempfang:</strong>
+    <p>Josef–Schotten–Schützenhalle</p>
+    <p>Twistedener Str. 285, 47623 Kevelaer</p>
+  </div>
+  <div class="address-block">
+    <strong>Feier:</strong>
+    <p>Kamper Hof</p>
+    <p>Kamper Str. 8, 47495 Rheinberg</p>
+  </div>
+  <div class="address-block">
+    <strong>Parkmöglichkeiten - Trauung:</strong>
+    <p>Basilikastraße 2, 47623 Kevelaer</p>
+    <p>Am bhf 55, 47623 Kevelaer</p>
+  </div>
+  <div class="address-block">
+    <strong>Parkmöglichkeit - Feier:</strong>
+    <p>Parkplatz am Kräuterturm</p>
+    <p>Kamperstraße 21</p>
+    <p>(kostenlose Entwertung in der Location)</p>
+  </div>
+  <div class="address-block">
+    <strong>Übernachtungsmöglichkeit:</strong>
+    <p>Hotel Am Fischmarkt</p>
+    <p>Fischmarkt 2–5, 47495 Rheinberg</p>
+    <p>Stichwort: Gunderloch</p>
+  </div>
 </section>
 
 <img src="church.jpg" alt="Kirche" class="divider">
@@ -408,48 +460,42 @@ a:hover {
   <p><strong>Herren:</strong> Anzug</p>
 </section>
 
-<!-- EMPFANG -->
-<section class="content" id="empfang">
-  <h2>Empfang</h2>
-  <p>Über eine Spende zu unserem Kuchenbuffet –mit Rücksprache– würden wir uns sehr freuen.</p>
+<!-- KUCHENBUFFET -->
+<section class="content" id="kuchen">
+  <h2>Kuchenbuffet</h2>
+  <p>Über eine Spende zu unserem Kuchenbuffet - mit Rücksprache oder Kontrolle in der Liste - würden wir uns sehr freuen!</p>
+  <p><a href="https://1drv.ms/x/c/69f6cbaf37066ebb/IQB1VSvJ7wxXTqVonJheuQeWAaEjhPQ_fPi9EMYOWhQoZ4o?e=aPpIUH">Link zum Kuchenbuffet</a></p>
 </section>
 
 <!-- GESCHENKE -->
 <section class="content" id="geschenke">
   <h2>Geschenke</h2>
-  <p>Eure Anwesenheit an unserem Hochzeitstag ist für uns das größte Geschenk. Wenn ihr uns darüber hinaus eine Freude machen möchtet, danken wir euch herzlich für einen finanziellen Beitrag zu unserer gemeinsamen Zukunft.</p>
+  <p>Eure Anwesenheit an unserem Hochzeitstag ist für uns das größte Geschenk. Wenn ihr uns darüber hinaus eine Freude machen möchtet, danken wir euch herzlich für einen <strong>finanziellen Beitrag</strong> zu unserer gemeinsamen Zukunft.</p>
 </section>
 
 <!-- UNSERE GESCHICHTE -->
 <section class="content" id="geschichte">
   <h2>Unsere Geschichte</h2>
-  <p><strong>Kennenlernen:</strong><br><br>
-  In einem Loch im Boden, da lebte ein Ralf.<br>
-  In einem feuchten, schmutzigen Loch, wo es nach Moder riecht und Wurmzipfel von den Wänden herabhängen.<br><br>
-  Neee Spaaaß :D<br><br>
-  Alles begann vor langer Zeit in einer weit, weit entfernten Galaxis in einer Höhle in Münster (adH).
-  Da entschloss sich ein Ralf: "Ich ziehe in ein Abenteuer!".<br><br>
-  Derweil erschallten aus Gohrdor die Worte: „Kevelaer! Ehemann!", welche Gollum*ine krächzend von sich gab.
-  So geschah es, dass Teresa am dritten Tage gen Osten schaute und ihren -noch unbekannten- Helden im Sonnenlicht erstrahlen sah...<br><br>
-  Ob das bei Euch genau so damals war?<br>
-  I doubt it !<br><br>
-  <strong>Zusammenkommen:</strong><br><br>
-  Nach einer langen Phase der Kontaktlosigkeit zog Ralf eines Tages für die Arbeit nach Köln. Dadurch sahen sich die beiden häufiger und ihr Verhältnis zueinander verbesserte sich.
-  Nach dem sich die beiden auf der Geburtstagsfeier von Ralf ausgesprochen hatten, war die Spannung verschwunden und sie nahmen in Freundschaft Kontakt zueinander auf.
-  Teresa bombardierte Ralf nur so mit Star Wars Reels - ohne es jemals geguckt zu haben.<br><br>
-  Schließlich einigten sich die beiden auf einen Filmabend bei welchem Ralf seine Gefühle für Teresa gestand.
-  Diese war völlig perplex und vertröstete den liebenswürdigen Ralf.
-  Kurz drauf - als Teresa sich gesammelt hatte und sich einen klaren Kopf gefasst hatte - trafen sich die beiden um sich erneut auszusprechen.
-  Dabei entschlossen sie sich in die Dating-Phase zu begeben.
-  Keine Woche später fand nun also ihr erstes offizielles Date statt bei dem Sie Erdbeeren pflücken gingen.
-  Am Abend wurde dann ein weiterer Star Wars Teil geschaut, doch Teresa hatte nur Augen für Ralf.
-  Daraufhin redeten die beiden und beschlossen es miteinander zu probieren.<br><br>
-  <strong>Verlauf:</strong><br><br>
-  Über die Zeit hinweg merkten die beiden schnell, wie gut Sie doch zueinander passten und wie sehr Sie sich liebten.
-  Schnell war klar: wir werden heiraten!
-  Doch offiziell dauerte es noch eine gaaaanze Weile, welche Teresa echtes Kopfzerbrechen bescherte.
-  Letzten Endes machte Ralf Ihr den perfekten Antrag am perfekten Ort.
-  </p>
+  
+  <div class="story-section">
+    <strong>Kennenlernen:</strong>
+    <p>In einem Loch im Boden, da lebte ein Ralf. In einem feuchten, schmutzigen Loch, wo es nach Moder riecht und Wurmzipfel von den Wänden herabhängen.</p>
+    <p>Neee Spaaaß :D</p>
+    <p>Alles begann vor langer Zeit in einer weit, weit entfernten Galaxis in einer Höhle in Münster (adH). Da entschloss sich ein Ralf: "Ich ziehe in ein Abenteuer!".</p>
+    <p>Derweil erschallten aus Gohrdor die Worte: „Kevelaer! Ehemann!", welche Gollum*ine krächzend von sich gab. So geschah es, dass Teresa am dritten Tage gen Osten schaute und ihren -noch unbekannten- Helden im Sonnenlicht erstrahlen sah...</p>
+    <p>Ob das bei Euch genau so damals war? I doubt it !</p>
+  </div>
+
+  <div class="story-section">
+    <strong>Zusammenkommen:</strong>
+    <p>Nach einer langen Phase der Kontaktlosigkeit zog Ralf eines Tages für die Arbeit nach Köln. Dadurch sahen sich die beiden häufiger und ihr Verhältnis zueinander verbesserte sich. Nach dem sich die beiden auf der Geburtstagsfeier von Ralf ausgesprochen hatten, war die Spannung verschwunden und sie nahmen in Freundschaft Kontakt zueinander auf. Teresa bombardierte Ralf nur so mit Star Wars Reels - ohne es jemals geguckt zu haben.</p>
+    <p>Schließlich einigten sich die beiden auf einen Filmabend bei welchem Ralf seine Gefühle für Teresa gestand. Diese war völlig perplex und vertröstete den liebenswürdigen Ralf. Kurz drauf - als Teresa sich gesammelt hatte und sich einen klaren Kopf gefasst hatte - trafen sich die beiden um sich erneut auszusprechen. Dabei entschlossen sie sich in die Dating-Phase zu begeben. Keine Woche später fand nun also ihr erstes offizielles Date statt bei dem Sie Erdbeeren pflücken gingen. Am Abend wurde dann ein weiterer Star Wars Teil geschaut, doch Teresa hatte nur Augen für Ralf. Daraufhin redeten die beiden und beschlossen es miteinander zu probieren.</p>
+  </div>
+
+  <div class="story-section">
+    <strong>Verlauf:</strong>
+    <p>Über die Zeit hinweg merkten die beiden schnell, wie gut Sie doch zueinander passten und wie sehr Sie sich liebten. Schnell war klar: wir werden heiraten! Doch offiziell dauerte es noch eine gaaaanze Weile, welche Teresa echtes Kopfzerbrechen bescherte. Letzten Endes machte Ralf Ihr den perfekten Antrag am perfekten Ort.</p>
+  </div>
 </section>
 
 <img src="about.jpg" alt="Über uns" class="divider">
@@ -464,7 +510,7 @@ a:hover {
 </section>
 
 <footer>
-  <p>❤️ Wir danken Euch für jegliche Teilhabe! ❤️</p>
+  <p>Wir danken Euch für jegliche Teilhabe!</p>
 </footer>
 
 </div>
