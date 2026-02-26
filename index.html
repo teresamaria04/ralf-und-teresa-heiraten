@@ -25,25 +25,50 @@ body {
     height: 100vh;
     background: linear-gradient(135deg, #4E684C 0%, #6B8B69 50%, #5D7A5B 100%);
     gap: 30px;
+    padding: 20px;
 }
 .access h1 {
     color: white;
-    font-size: 2.5em;
+    font-size: clamp(1.8em, 5vw, 2.5em);
     margin-bottom: 0;
+    text-align: center;
+}
+.password-container {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    max-width: 400px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 .access input {
-    padding: 12px 20px;
-    font-size: 1.1em;
+    padding: clamp(8px, 2vw, 12px) clamp(12px, 3vw, 20px);
+    font-size: clamp(0.9em, 2vw, 1.1em);
     border: none;
     border-radius: 5px;
-    width: 300px;
-    max-width: 90%;
+    flex: 1;
+    min-width: 200px;
     background-color: #F5F8F5;
     color: #4E684C;
 }
+.toggle-password {
+    background-color: #F5F8F5;
+    border: none;
+    border-radius: 5px;
+    padding: clamp(8px, 2vw, 12px) clamp(10px, 2vw, 15px);
+    cursor: pointer;
+    color: #4E684C;
+    font-size: clamp(0.9em, 2vw, 1.1em);
+    font-weight: bold;
+    transition: 0.3s;
+}
+.toggle-password:hover {
+    background-color: #E8F0E8;
+}
 .access button {
-    padding: 8px 24px;
-    font-size: 1.2em;
+    padding: clamp(6px, 1.5vw, 8px) clamp(18px, 3vw, 24px);
+    font-size: clamp(1em, 2vw, 1.2em);
     background-color: transparent;
     color: white;
     border: 2px solid white;
@@ -52,6 +77,8 @@ body {
     font-weight: 600;
     font-family: 'Cormorant Garamond', serif;
     transition: 0.3s;
+    width: 100%;
+    max-width: 400px;
 }
 .access button:hover {
     color: #E8F0E8;
@@ -65,6 +92,7 @@ header.hero {
     background-size: cover;
     background-position: center top;
     background-attachment: fixed;
+    width: 100%;
     height: 100vh;
     min-height: 500px;
     max-height: 100vh;
@@ -100,7 +128,7 @@ header h1, header p {
 /* TOC (Table of Contents) */
 .toc {
     background: white;
-    padding: 40px;
+    padding: clamp(20px, 4vw, 40px);
     margin: 0 auto;
     max-width: 900px;
     border-radius: 8px;
@@ -109,7 +137,7 @@ header h1, header p {
 }
 .toc h2 {
     color: #4E684C;
-    font-size: 2.2em;
+    font-size: clamp(1.6em, 4vw, 2.2em);
     margin-bottom: 30px;
     border-bottom: 3px solid #6B8B69;
     padding-bottom: 15px;
@@ -121,7 +149,7 @@ header h1, header p {
     gap: 15px;
 }
 .toc-item {
-    padding: 15px 20px;
+    padding: clamp(12px, 2vw, 15px) clamp(15px, 2vw, 20px);
     background: linear-gradient(135deg, #F0F5F0 0%, #E8F0E8 100%);
     border-left: 4px solid #4E684C;
     border-radius: 5px;
@@ -131,7 +159,7 @@ header h1, header p {
     color: #4E684C;
     text-decoration: none;
     font-weight: bold;
-    font-size: 1.1em;
+    font-size: clamp(1em, 2vw, 1.1em);
     display: block;
     transition: 0.3s;
 }
@@ -142,8 +170,8 @@ header h1, header p {
 
 .content {
     max-width: 900px;
-    margin: 50px auto;
-    padding: 40px;
+    margin: clamp(30px, 5vw, 50px) auto;
+    padding: clamp(20px, 4vw, 40px);
     background: white;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(78, 104, 76, 0.1);
@@ -151,14 +179,14 @@ header h1, header p {
 }
 .content h2 {
     color: #4E684C;
-    font-size: 2.2em;
+    font-size: clamp(1.6em, 4vw, 2.2em);
     margin-bottom: 30px;
     border-bottom: 3px solid #6B8B69;
     padding-bottom: 15px;
     scroll-margin-top: 100px;
 }
 .content p {
-    font-size: 1.1em;
+    font-size: clamp(1em, 2vw, 1.1em);
     margin-bottom: 20px;
     line-height: 1.8;
     color: #3A3A3A;
@@ -179,13 +207,13 @@ header h1, header p {
 .time {
     color: #4E684C;
     font-weight: bold;
-    font-size: 1.1em;
+    font-size: clamp(1em, 2vw, 1.1em);
     display: block;
     margin-bottom: 5px;
     font-family: 'Cormorant Garamond', serif;
 }
 .schedule-text {
-    font-size: 1.05em;
+    font-size: clamp(0.95em, 1.5vw, 1.05em);
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
@@ -198,13 +226,13 @@ header h1, header p {
 }
 .address-block strong {
     color: #4E684C;
-    font-size: 1.1em;
+    font-size: clamp(1em, 2vw, 1.1em);
     display: block;
     margin-bottom: 5px;
 }
 .address-block p {
     margin: 0;
-    font-size: 1em;
+    font-size: clamp(0.95em, 1.8vw, 1em);
     margin-bottom: 3px;
 }
 
@@ -213,13 +241,13 @@ header h1, header p {
 }
 .story-section strong {
     color: #4E684C;
-    font-size: 1.15em;
+    font-size: clamp(1.1em, 2vw, 1.15em);
     display: block;
     margin-bottom: 8px;
 }
 .story-section p {
     margin: 0;
-    font-size: 1.05em;
+    font-size: clamp(1em, 1.8vw, 1.05em);
     line-height: 1.6;
 }
 
@@ -233,34 +261,36 @@ header h1, header p {
 
 .contact-number {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1em;
+    font-size: clamp(1em, 1.8vw, 1.1em);
 }
 
 .divider {
     width: 100%;
-    height: 100vh;
+    height: clamp(50vh, 100vh, 100vh);
     object-fit: cover;
-    object-position: center top;
+    object-position: center;
     margin: 0;
     padding: 0;
     display: block;
+    max-width: 100%;
 }
 .parallax-image {
     width: 100%;
-    height: 100vh;
+    height: clamp(50vh, 100vh, 100vh);
     background-size: cover;
-    background-position: center top;
+    background-position: center;
     background-attachment: fixed;
     margin: 0;
     padding: 0;
+    max-width: 100%;
 }
 footer {
     text-align: center;
-    padding: 40px 20px;
+    padding: clamp(20px, 4vw, 40px);
     background: linear-gradient(135deg, #4E684C 0%, #5D7A5B 100%);
     color: white;
     margin-top: 80px;
-    font-size: 1.1em;
+    font-size: clamp(1em, 2vw, 1.1em);
 }
 a {
     color: #4E684C;
@@ -275,12 +305,13 @@ a:hover {
 .nav-link {
     display: inline-block;
     margin: 10px 20px;
-    padding: 10px 20px;
+    padding: clamp(8px, 1.5vw, 10px) clamp(15px, 3vw, 20px);
     background: linear-gradient(135deg, #4E684C 0%, #5D7A5B 100%);
     color: white;
     border-radius: 5px;
     text-decoration: none;
     transition: 0.3s;
+    font-size: clamp(1em, 2vw, 1.1em);
 }
 .nav-link:hover {
     background: linear-gradient(135deg, #5D7A5B 0%, #6B8B69 100%);
@@ -316,6 +347,12 @@ a:hover {
     .access {
         gap: 20px;
     }
+    .password-container {
+        flex-direction: column;
+    }
+    .access input {
+        min-width: auto;
+    }
     .content {
         margin: 30px auto;
         padding: 20px;
@@ -350,7 +387,7 @@ a:hover {
 /* Kleine Handys */
 @media (max-width: 480px) {
     .access h1 {
-        font-size: 1.8em;
+        font-size: clamp(1.5em, 4vw, 1.8em);
     }
     .access input {
         width: 100%;
@@ -386,7 +423,10 @@ a:hover {
 
 <div class="access" id="gate">
   <h1>Willkommen</h1>
-  <input type="password" id="pw" placeholder="Zugangscode">
+  <div class="password-container">
+    <input type="password" id="pw" placeholder="Zugangscode">
+    <button class="toggle-password" onclick="togglePassword()">👁️</button>
+  </div>
   <button onclick="openSite()">Weiter</button>
 </div>
 
@@ -423,7 +463,7 @@ a:hover {
 <section class="content" id="erinnerungen">
   <h2>Erinnerungen</h2>
   <p>Fotos und Videos von unserem besonderen Tag:<br>
-  <a href="https://photos.app.goo.gl/9JvJRk1kwqA1CmAXA">Link zu den Fotos</a></p>
+  <a href="https://photos.app.goo.gl/9JvJRk1kwqA1CmAXA" target="_blank">Link zu den Fotos</a></p>
 </section>
 
 <!-- ABLAUF -->
@@ -498,7 +538,7 @@ a:hover {
 <section class="content" id="kuchen">
   <h2>Kuchenbuffet</h2>
   <p>Über eine Spende zu unserem Kuchenbuffet - mit Rücksprache oder Kontrolle in der Liste - würden wir uns sehr freuen!</p>
-  <p><a href="https://1drv.ms/x/c/69f6cbaf37066ebb/IQB1VSvJ7wxXTqVonJheuQeWAaEjhPQ_fPi9EMYOWhQoZ4o?e=aPpIUH">Link zum Kuchenbuffet</a></p>
+  <p><a href="https://1drv.ms/x/c/69f6cbaf37066ebb/IQB1VSvJ7wxXTqVonJheuQeWAaEjhPQ_fPi9EMYOWhQoZ4o?e=aPpIUH" target="_blank">Link zum Kuchenbuffet</a></p>
 </section>
 
 <!-- GESCHENKE -->
@@ -512,12 +552,22 @@ a:hover {
   <h2>Unsere Geschichte</h2>
   
   <div class="story-section">
+    <strong>Kennenlernen:</strong>
     <p>In einem Loch im Boden, da lebte ein Ralf. In einem feuchten, schmutzigen Loch, wo es nach Moder riecht und Wurmzipfel von den Wänden herabhängen.</p>
     <p>Neee Spaaaß :D</p>
     <p>Alles begann vor langer Zeit in einer weit, weit entfernten Galaxis in einer Höhle in Münster (adH). Da entschloss sich ein Ralf: "Ich ziehe in ein Abenteuer!".</p>
     <p>Derweil erschallten aus Gohrdor die Worte: „Kevelaer! Ehemann!", welche Gollum*ine krächzend von sich gab. So geschah es, dass Teresa am dritten Tage gen Osten schaute und ihren -noch unbekannten- Helden im Sonnenlicht erstrahlen sah...</p>
     <p>Ob das bei Euch genau so damals war? I doubt it!</p>
   </div>
+
+  <div class="story-section">
+    <strong>Zusammenkommen:</strong>
+    <p>Nach einer langen Phase der Kontaktlosigkeit zog Ralf eines Tages für die Arbeit nach Köln. Dadurch sahen sich die beiden häufiger und ihr Verhältnis zueinander verbesserte sich. Nach dem sich die beiden auf der Geburtstagsfeier von Ralf ausgesprochen hatten, war die Spannung verschwunden und sie nahmen in Freundschaft Kontakt zueinander auf. Teresa bombardierte Ralf nur so mit Star Wars Reels - ohne es jemals geguckt zu haben.</p>
+    <p>Schließlich einigten sich die beiden auf einen Filmabend bei welchem Ralf seine Gefühle für Teresa gestand. Diese war völlig perplex und vertröstete den liebenswürdigen Ralf. Kurz drauf - als Teresa sich gesammelt hatte und sich einen klaren Kopf gefasst hatte - trafen sich die beiden um sich erneut auszusprechen. Dabei entschlossen sie sich in die Dating-Phase zu begeben. Keine Woche später fand nun also ihr erstes offizielles Date statt bei dem Sie Erdbeeren pflücken gingen. Am Abend wurde dann ein weiterer Star Wars Teil geschaut, doch Teresa hatte nur Augen für Ralf. Daraufhin redeten die beiden und beschlossen es miteinander zu probieren.</p>
+  </div>
+
+  <div class="story-section">
+    <strong>Verlauf:</strong>
     <p>Über die Zeit hinweg merkten die beiden schnell, wie gut Sie doch zueinander passten und wie sehr Sie sich liebten. Schnell war klar: wir werden heiraten! Doch offiziell dauerte es noch eine gaaaanze Weile, welche Teresa echtes Kopfzerbrechen bescherte. Letzten Endes machte Ralf Ihr den perfekten Antrag am perfekten Ort.</p>
   </div>
 </section>
@@ -540,17 +590,55 @@ a:hover {
 </div>
 
 <script>
+// Passwort im LocalStorage speichern
 function openSite() {
     const pw = document.getElementById('pw').value;
     if (pw === 'Gunderlochs2026') {
+        localStorage.setItem('weddingSiteUnlocked', 'true');
         document.getElementById('gate').style.display = 'none';
         document.getElementById('main').style.display = 'block';
     } else {
         alert('Falsches Passwort!');
     }
 }
-document.getElementById('pw').addEventListener('keypress', function(e) {
-    if (e.key === 'Enter') openSite();
+
+// PIN anzeigen/verbergen Toggle
+function togglePassword() {
+    const pwInput = document.getElementById('pw');
+    const btn = document.querySelector('.toggle-password');
+    
+    if (pwInput.type === 'password') {
+        pwInput.type = 'text';
+        btn.textContent = '👁️‍🗨️';
+    } else {
+        pwInput.type = 'password';
+        btn.textContent = '👁️';
+    }
+}
+
+// Beim Neuladen prüfen, ob Passwort bereits eingegeben wurde
+window.addEventListener('load', function() {
+    if (localStorage.getItem('weddingSiteUnlocked') === 'true') {
+        document.getElementById('gate').style.display = 'none';
+        document.getElementById('main').style.display = 'block';
+    }
+});
+
+// Enter-Taste zum Absenden
+document.addEventListener('DOMContentLoaded', function() {
+    const pwInput = document.getElementById('pw');
+    if (pwInput) {
+        pwInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') openSite();
+        });
+    }
+});
+
+// Links in neuem Tab öffnen und Seite nicht neuladen
+document.addEventListener('click', function(e) {
+    if (e.target.tagName === 'A' && e.target.getAttribute('target') === '_blank') {
+        e.target.click();
+    }
 });
 </script>
 </body>
