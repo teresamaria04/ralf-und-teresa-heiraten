@@ -35,13 +35,10 @@ body {
 }
 .password-container {
     display: flex;
-    gap: 5px;
+    align-items: center;
     width: 100%;
     max-width: 400px;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+    gap: 8px;
 }
 .access input {
     padding: clamp(8px, 2vw, 12px) clamp(12px, 3vw, 20px);
@@ -54,19 +51,19 @@ body {
     color: #4E684C;
 }
 .toggle-password {
-    background-color: transparent;
+    background-color: #F5F8F5;
     border: none;
-    border-radius: 5px;
-    padding: clamp(4px, 1vw, 6px) clamp(6px, 1.5vw, 8px);
+    border-radius: 3px;
+    padding: clamp(6px, 1.5vw, 8px) clamp(8px, 1.5vw, 10px);
     cursor: pointer;
     color: #4E684C;
-    font-size: clamp(0.8em, 1.5vw, 0.9em);
+    font-size: clamp(0.75em, 1.2vw, 0.85em);
     font-weight: bold;
     transition: 0.3s;
-    margin-left: 5px;
+    flex-shrink: 0;
 }
 .toggle-password:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: #E8F0E8;
 }
 .access button {
     padding: clamp(6px, 1.5vw, 8px) clamp(18px, 3vw, 24px);
@@ -92,12 +89,10 @@ body {
 }
 header.hero {
     background-size: cover;
-    background-position: center;
-    background-attachment: scroll;
-    width: 100vw;
+    background-position: center top;
+    background-attachment: fixed;
+    width: 100%;
     height: 100vh;
-    min-height: 500px;
-    max-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -113,10 +108,11 @@ header.hero {
     right: 0;
     bottom: 0;
     background: rgba(78, 104, 76, 0.4);
+    z-index: 1;
 }
 header h1, header p {
     position: relative;
-    z-index: 1;
+    z-index: 2;
 }
 .title {
     font-size: clamp(2em, 5vw, 4em);
@@ -136,6 +132,8 @@ header h1, header p {
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(78, 104, 76, 0.1);
     border-left: 5px solid #4E684C;
+    position: relative;
+    z-index: 10;
 }
 .toc h2 {
     color: #4E684C;
@@ -178,6 +176,8 @@ header h1, header p {
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(78, 104, 76, 0.1);
     border-left: 5px solid #4E684C;
+    position: relative;
+    z-index: 10;
 }
 .content h2 {
     color: #4E684C;
@@ -263,26 +263,50 @@ header h1, header p {
     font-size: clamp(1em, 1.8vw, 1.1em);
 }
 
-.divider {
-    width: 100%;
+/* Parallax Bilder mit Scroll-Text */
+.parallax-section {
+    position: relative;
     height: 100vh;
-    object-fit: cover;
-    object-position: center;
-    margin: 0;
-    padding: 0;
-    display: block;
-    max-width: 100%;
+    overflow: hidden;
 }
 
-.parallax-image {
+.parallax-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100vh;
     background-size: cover;
-    background-position: center;
-    background-attachment: scroll;
-    margin: 0;
-    padding: 0;
-    max-width: 100%;
+    background-position: center top;
+    background-attachment: fixed;
+    z-index: 0;
+}
+
+.parallax-content {
+    position: relative;
+    z-index: 10;
+    background: linear-gradient(to bottom, transparent 0%, rgba(245, 248, 245, 0.9) 30%, rgba(245, 248, 245, 1) 60%);
+    min-height: 100vh;
+    padding: clamp(30px, 5vw, 50px) clamp(20px, 4vw, 40px);
+    max-width: 900px;
+    margin: 0 auto;
+    padding-top: clamp(300px, 60vh, 600px);
+}
+
+.parallax-content h2 {
+    color: #4E684C;
+    font-size: clamp(1.6em, 4vw, 2.2em);
+    margin-bottom: 30px;
+    border-bottom: 3px solid #6B8B69;
+    padding-bottom: 15px;
+}
+
+.parallax-content p {
+    font-size: clamp(1em, 2vw, 1.1em);
+    margin-bottom: 20px;
+    line-height: 1.8;
+    color: #3A3A3A;
+    text-align: justify;
 }
 
 footer {
@@ -292,6 +316,8 @@ footer {
     color: white;
     margin-top: 80px;
     font-size: clamp(1em, 2vw, 1.1em);
+    position: relative;
+    z-index: 10;
 }
 a {
     color: #4E684C;
@@ -313,6 +339,8 @@ a:hover {
     text-decoration: none;
     transition: 0.3s;
     font-size: clamp(1em, 2vw, 1.1em);
+    position: relative;
+    z-index: 10;
 }
 .nav-link:hover {
     background: linear-gradient(135deg, #5D7A5B 0%, #6B8B69 100%);
@@ -327,15 +355,12 @@ a:hover {
     }
     header.hero {
         height: 80vh;
-        min-height: 400px;
-        background-position: center;
-        background-attachment: scroll;
-    }
-    .divider {
-        height: 80vh;
     }
     .toc-list {
         grid-template-columns: repeat(2, 1fr);
+    }
+    .parallax-content {
+        padding-top: clamp(250px, 50vh, 400px);
     }
 }
 
@@ -350,12 +375,6 @@ a:hover {
     .access {
         gap: 20px;
     }
-    .password-container {
-        flex-direction: row;
-    }
-    .access input {
-        min-width: auto;
-    }
     .content {
         margin: 30px auto;
         padding: 20px;
@@ -369,15 +388,8 @@ a:hover {
         font-size: 1em;
         text-align: left;
     }
-    .divider {
-        height: 70vh;
-        min-height: 400px;
-    }
     header.hero {
         height: 70vh;
-        min-height: 300px;
-        background-position: center;
-        background-attachment: scroll;
     }
     .schedule {
         grid-template-columns: 1fr;
@@ -387,6 +399,12 @@ a:hover {
     }
     .toc-list {
         grid-template-columns: 1fr;
+    }
+    .parallax-section {
+        height: 100vh;
+    }
+    .parallax-content {
+        padding-top: clamp(200px, 45vh, 350px);
     }
 }
 
@@ -414,18 +432,14 @@ a:hover {
     .content p {
         text-align: left;
     }
-    .divider {
-        height: 60vh;
-        min-height: 250px;
-    }
-    header.hero {
-        height: 60vh;
-        min-height: 250px;
-        background-position: center;
-        background-attachment: scroll;
-    }
     .toc h2 {
         font-size: 1.6em;
+    }
+    .parallax-section {
+        height: 100vh;
+    }
+    .parallax-content {
+        padding-top: clamp(150px, 40vh, 280px);
     }
 }
 </style>
@@ -441,7 +455,7 @@ a:hover {
   <button onclick="openSite()">Weiter</button>
 </div>
 
-<div id="main">
+<div id="main" style="display:none;">
 
 <header class="hero" style="background-image:url('hero.jpg');">
   <div class="shade"></div>
@@ -530,18 +544,19 @@ a:hover {
   </div>
 </section>
 
-<img src="church.jpg" alt="Kirche" class="divider">
-
-<!-- DRESSCODE -->
-<section class="content" id="dresscode">
-  <h2>Dresscode</h2>
-  <div class="dresscode-item">
-    <strong>Damen:</strong>
-    <p>Cocktail– oder Abendkleid<br>Farben wie weiß oder beige sind nicht erwünscht.</p>
-  </div>
-  <div class="dresscode-item">
-    <strong>Herren:</strong>
-    <p>Anzug</p>
+<!-- PARALLAX KIRCHE -->
+<section class="parallax-section" id="dresscode-section">
+  <div class="parallax-bg" style="background-image:url('church.jpg');"></div>
+  <div class="parallax-content">
+    <h2 id="dresscode">Dresscode</h2>
+    <div class="dresscode-item">
+      <strong>Damen:</strong>
+      <p>Cocktail– oder Abendkleid<br>Farben wie weiß oder beige sind nicht erwünscht.</p>
+    </div>
+    <div class="dresscode-item">
+      <strong>Herren:</strong>
+      <p>Anzug</p>
+    </div>
   </div>
 </section>
 
@@ -558,24 +573,25 @@ a:hover {
   <p>Eure Anwesenheit an unserem Hochzeitstag ist für uns das größte Geschenk. Wenn ihr uns darüber hinaus eine Freude machen möchtet, danken wir euch herzlich für einen <strong>finanziellen Beitrag</strong> zu unserer gemeinsamen Zukunft.</p>
 </section>
 
-<!-- UNSERE GESCHICHTE -->
-<section class="content" id="geschichte">
-  <h2>Unsere Geschichte</h2>
-  
-  <div class="story-section">
-    <p>In einem Loch im Boden, da lebte ein Ralf. In einem feuchten, schmutzigen Loch, wo es nach Moder riecht und Wurmzipfel von den Wänden herabhängen. Neee Spaaaß :D</p>
+<!-- PARALLAX ABOUT -->
+<section class="parallax-section" id="geschichte-section">
+  <div class="parallax-bg" style="background-image:url('about.jpg');"></div>
+  <div class="parallax-content">
+    <h2 id="geschichte">Unsere Geschichte</h2>
     
-    <p>Alles begann vor langer Zeit in einer weit, weit entfernten Galaxis in einer Höhle in Münster (adH). Da entschloss sich ein Ralf: "Ich ziehe in ein Abenteuer!". Derweil erschallten aus Gohrdor die Worte: „Kevelaer! Ehemann!", welche Gollum*ine krächzend von sich gab. So geschah es, dass Teresa am dritten Tage gen Osten schaute und ihren -noch unbekannten- Helden im Sonnenlicht erstrahlen sah...</p>
-    
-    <p>Ob das bei Euch genau so damals war? I doubt it!</p>
-  </div>
+    <div class="story-section">
+      <p>In einem Loch im Boden, da lebte ein Ralf. In einem feuchten, schmutzigen Loch, wo es nach Moder riecht und Wurmzipfel von den Wänden herabhängen. Neee Spaaaß :D</p>
+      
+      <p>Alles begann vor langer Zeit in einer weit, weit entfernten Galaxis in einer Höhle in Münster (adH). Da entschloss sich ein Ralf: "Ich ziehe in ein Abenteuer!". Derweil erschallten aus Gohrdor die Worte: „Kevelaer! Ehemann!", welche Gollum*ine krächzend von sich gab. So geschah es, dass Teresa am dritten Tage gen Osten schaute und ihren -noch unbekannten- Helden im Sonnenlicht erstrahlen sah...</p>
+      
+      <p>Ob das bei Euch genau so damals war? I doubt it!</p>
+    </div>
 
-  <div class="story-section">
-    <p>Über die Zeit hinweg merkten die beiden schnell, wie gut sie doch zueinander passten und wie sehr sie sich liebten. Schnell war klar: wir werden heiraten! Doch offiziell dauerte es noch eine gaaaanze Weile, welche Teresa echtes Kopfzerbrechen bescherte. Letzten Endes machte Ralf ihr den perfekten Antrag am perfekten Ort.</p>
+    <div class="story-section">
+      <p>Über die Zeit hinweg merkten die beiden schnell, wie gut sie doch zueinander passten und wie sehr sie sich liebten. Schnell war klar: wir werden heiraten! Doch offiziell dauerte es noch eine gaaaanze Weile, welche Teresa echtes Kopfzerbrechen bescherte. Letzten Endes machte Ralf ihr den perfekten Antrag am perfekten Ort.</p>
+    </div>
   </div>
 </section>
-
-<img src="about.jpg" alt="Über uns" class="divider">
 
 <!-- KONTAKTE -->
 <section class="content" id="kontakte">
@@ -593,16 +609,16 @@ a:hover {
 </div>
 
 <script>
-// Passwort im LocalStorage speichern
+// Passwort NICHT speichern - immer fragen!
 function openSite() {
     const pw = document.getElementById('pw').value;
     if (pw === 'Gunderlochs2026') {
-        localStorage.setItem('weddingSiteUnlocked', 'true');
         document.getElementById('gate').style.display = 'none';
         document.getElementById('main').style.display = 'block';
         window.scrollTo(0, 0);
     } else {
         alert('Falsches Passwort!');
+        document.getElementById('pw').value = '';
     }
 }
 
@@ -620,20 +636,6 @@ function togglePassword() {
     }
 }
 
-// Beim Seitenladen prüfen, ob Passwort bereits eingegeben wurde
-function checkAuth() {
-    if (localStorage.getItem('weddingSiteUnlocked') === 'true') {
-        document.getElementById('gate').style.display = 'none';
-        document.getElementById('main').style.display = 'block';
-    } else {
-        document.getElementById('gate').style.display = 'flex';
-        document.getElementById('main').style.display = 'none';
-    }
-}
-
-// Beim Neuladen sofort prüfen
-checkAuth();
-
 // Enter-Taste zum Absenden
 document.addEventListener('DOMContentLoaded', function() {
     const pwInput = document.getElementById('pw');
@@ -641,19 +643,6 @@ document.addEventListener('DOMContentLoaded', function() {
         pwInput.addEventListener('keypress', function(e) {
             if (e.key === 'Enter') openSite();
         });
-    }
-});
-
-// Logout-Funktion (optional - löscht den Session)
-function logout() {
-    localStorage.removeItem('weddingSiteUnlocked');
-    location.reload();
-}
-
-// Links in neuem Tab öffnen und Seite nicht neuladen
-document.addEventListener('click', function(e) {
-    if (e.target.tagName === 'A' && e.target.getAttribute('target') === '_blank') {
-        e.target.click();
     }
 });
 </script>
