@@ -35,12 +35,13 @@ body {
 }
 .password-container {
     display: flex;
-    gap: 10px;
+    gap: 5px;
     width: 100%;
     max-width: 400px;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 .access input {
     padding: clamp(8px, 2vw, 12px) clamp(12px, 3vw, 20px);
@@ -51,20 +52,23 @@ body {
     min-width: 200px;
     background-color: #F5F8F5;
     color: #4E684C;
+    padding-right: clamp(35px, 8vw, 45px);
 }
 .toggle-password {
-    background-color: #F5F8F5;
+    position: absolute;
+    right: 8px;
+    background-color: transparent;
     border: none;
     border-radius: 5px;
-    padding: clamp(8px, 2vw, 12px) clamp(10px, 2vw, 15px);
+    padding: clamp(4px, 1vw, 6px) clamp(6px, 1.5vw, 8px);
     cursor: pointer;
     color: #4E684C;
-    font-size: clamp(0.9em, 2vw, 1.1em);
+    font-size: clamp(0.8em, 1.5vw, 0.9em);
     font-weight: bold;
     transition: 0.3s;
 }
 .toggle-password:hover {
-    background-color: #E8F0E8;
+    background-color: rgba(255, 255, 255, 0.1);
 }
 .access button {
     padding: clamp(6px, 1.5vw, 8px) clamp(18px, 3vw, 24px);
@@ -90,9 +94,9 @@ body {
 }
 header.hero {
     background-size: cover;
-    background-position: center top;
-    background-attachment: fixed;
-    width: 100%;
+    background-position: center;
+    background-attachment: scroll;
+    width: 100vw;
     height: 100vh;
     min-height: 500px;
     max-height: 100vh;
@@ -190,6 +194,7 @@ header h1, header p {
     margin-bottom: 20px;
     line-height: 1.8;
     color: #3A3A3A;
+    text-align: justify;
 }
 .schedule {
     display: grid;
@@ -237,18 +242,14 @@ header h1, header p {
 }
 
 .story-section {
-    margin-bottom: 25px;
-}
-.story-section strong {
-    color: #4E684C;
-    font-size: clamp(1.1em, 2vw, 1.15em);
-    display: block;
-    margin-bottom: 8px;
+    margin-bottom: 20px;
 }
 .story-section p {
     margin: 0;
     font-size: clamp(1em, 1.8vw, 1.05em);
-    line-height: 1.6;
+    line-height: 1.8;
+    color: #3A3A3A;
+    text-align: justify;
 }
 
 .dresscode-item {
@@ -279,7 +280,7 @@ header h1, header p {
     height: clamp(50vh, 100vh, 100vh);
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    background-attachment: scroll;
     margin: 0;
     padding: 0;
     max-width: 100%;
@@ -327,6 +328,8 @@ a:hover {
     header.hero {
         height: 80vh;
         min-height: 400px;
+        background-position: center;
+        background-attachment: scroll;
     }
     .divider {
         height: 80vh;
@@ -348,7 +351,7 @@ a:hover {
         gap: 20px;
     }
     .password-container {
-        flex-direction: column;
+        flex-direction: row;
     }
     .access input {
         min-width: auto;
@@ -364,6 +367,7 @@ a:hover {
     }
     .content p {
         font-size: 1em;
+        text-align: left;
     }
     .divider {
         height: 70vh;
@@ -371,7 +375,9 @@ a:hover {
     }
     header.hero {
         height: 70vh;
-        min-height: 400px;
+        min-height: 300px;
+        background-position: center;
+        background-attachment: scroll;
     }
     .schedule {
         grid-template-columns: 1fr;
@@ -405,13 +411,18 @@ a:hover {
         font-size: 1.5em;
         margin-bottom: 15px;
     }
+    .content p {
+        text-align: left;
+    }
     .divider {
         height: 60vh;
-        min-height: 350px;
+        min-height: 250px;
     }
     header.hero {
         height: 60vh;
-        min-height: 350px;
+        min-height: 250px;
+        background-position: center;
+        background-attachment: scroll;
     }
     .toc h2 {
         font-size: 1.6em;
@@ -425,7 +436,7 @@ a:hover {
   <h1>Willkommen</h1>
   <div class="password-container">
     <input type="password" id="pw" placeholder="Zugangscode">
-    <button class="toggle-password" onclick="togglePassword()">👁️</button>
+    <button class="toggle-password" onclick="togglePassword()" title="PIN anzeigen">👁️</button>
   </div>
   <button onclick="openSite()">Weiter</button>
 </div>
@@ -552,23 +563,15 @@ a:hover {
   <h2>Unsere Geschichte</h2>
   
   <div class="story-section">
-    <strong>Kennenlernen:</strong>
-    <p>In einem Loch im Boden, da lebte ein Ralf. In einem feuchten, schmutzigen Loch, wo es nach Moder riecht und Wurmzipfel von den Wänden herabhängen.</p>
-    <p>Neee Spaaaß :D</p>
-    <p>Alles begann vor langer Zeit in einer weit, weit entfernten Galaxis in einer Höhle in Münster (adH). Da entschloss sich ein Ralf: "Ich ziehe in ein Abenteuer!".</p>
-    <p>Derweil erschallten aus Gohrdor die Worte: „Kevelaer! Ehemann!", welche Gollum*ine krächzend von sich gab. So geschah es, dass Teresa am dritten Tage gen Osten schaute und ihren -noch unbekannten- Helden im Sonnenlicht erstrahlen sah...</p>
+    <p>In einem Loch im Boden, da lebte ein Ralf. In einem feuchten, schmutzigen Loch, wo es nach Moder riecht und Wurmzipfel von den Wänden herabhängen. Neee Spaaaß :D</p>
+    
+    <p>Alles begann vor langer Zeit in einer weit, weit entfernten Galaxis in einer Höhle in Münster (adH). Da entschloss sich ein Ralf: "Ich ziehe in ein Abenteuer!". Derweil erschallten aus Gohrdor die Worte: „Kevelaer! Ehemann!", welche Gollum*ine krächzend von sich gab. So geschah es, dass Teresa am dritten Tage gen Osten schaute und ihren -noch unbekannten- Helden im Sonnenlicht erstrahlen sah...</p>
+    
     <p>Ob das bei Euch genau so damals war? I doubt it!</p>
   </div>
 
   <div class="story-section">
-    <strong>Zusammenkommen:</strong>
-    <p>Nach einer langen Phase der Kontaktlosigkeit zog Ralf eines Tages für die Arbeit nach Köln. Dadurch sahen sich die beiden häufiger und ihr Verhältnis zueinander verbesserte sich. Nach dem sich die beiden auf der Geburtstagsfeier von Ralf ausgesprochen hatten, war die Spannung verschwunden und sie nahmen in Freundschaft Kontakt zueinander auf. Teresa bombardierte Ralf nur so mit Star Wars Reels - ohne es jemals geguckt zu haben.</p>
-    <p>Schließlich einigten sich die beiden auf einen Filmabend bei welchem Ralf seine Gefühle für Teresa gestand. Diese war völlig perplex und vertröstete den liebenswürdigen Ralf. Kurz drauf - als Teresa sich gesammelt hatte und sich einen klaren Kopf gefasst hatte - trafen sich die beiden um sich erneut auszusprechen. Dabei entschlossen sie sich in die Dating-Phase zu begeben. Keine Woche später fand nun also ihr erstes offizielles Date statt bei dem Sie Erdbeeren pflücken gingen. Am Abend wurde dann ein weiterer Star Wars Teil geschaut, doch Teresa hatte nur Augen für Ralf. Daraufhin redeten die beiden und beschlossen es miteinander zu probieren.</p>
-  </div>
-
-  <div class="story-section">
-    <strong>Verlauf:</strong>
-    <p>Über die Zeit hinweg merkten die beiden schnell, wie gut Sie doch zueinander passten und wie sehr Sie sich liebten. Schnell war klar: wir werden heiraten! Doch offiziell dauerte es noch eine gaaaanze Weile, welche Teresa echtes Kopfzerbrechen bescherte. Letzten Endes machte Ralf Ihr den perfekten Antrag am perfekten Ort.</p>
+    <p>Über die Zeit hinweg merkten die beiden schnell, wie gut sie doch zueinander passten und wie sehr sie sich liebten. Schnell war klar: wir werden heiraten! Doch offiziell dauerte es noch eine gaaaanze Weile, welche Teresa echtes Kopfzerbrechen bescherte. Letzten Endes machte Ralf ihr den perfekten Antrag am perfekten Ort.</p>
   </div>
 </section>
 
