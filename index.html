@@ -14,7 +14,7 @@
 body {
     font-family: 'Cormorant Garamond', serif;
     line-height: 1.8;
-    color: #2D472D;
+    color: #4E684C;
     background-color: #F5F8F5;
 }
 .access {
@@ -23,13 +23,13 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(135deg, #2D472D 0%, #4A6B4A 50%, #3D5A3D 100%);
-    gap: 20px;
+    background: linear-gradient(135deg, #4E684C 0%, #6B8B69 50%, #5D7A5B 100%);
+    gap: 30px;
 }
 .access h1 {
     color: white;
     font-size: 2.5em;
-    margin-bottom: 20px;
+    margin-bottom: 0;
 }
 .access input {
     padding: 12px 20px;
@@ -39,7 +39,7 @@ body {
     width: 300px;
     max-width: 90%;
     background-color: #F5F8F5;
-    color: #2D472D;
+    color: #4E684C;
 }
 .access button {
     padding: 8px 24px;
@@ -80,7 +80,7 @@ header.hero {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(45, 71, 45, 0.4);
+    background: rgba(78, 104, 76, 0.4);
 }
 header h1, header p {
     position: relative;
@@ -102,14 +102,14 @@ header h1, header p {
     margin: 0 auto;
     max-width: 900px;
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(45, 71, 45, 0.1);
-    border-left: 5px solid #2D472D;
+    box-shadow: 0 4px 15px rgba(78, 104, 76, 0.1);
+    border-left: 5px solid #4E684C;
 }
 .toc h2 {
-    color: #2D472D;
+    color: #4E684C;
     font-size: 2.2em;
     margin-bottom: 30px;
-    border-bottom: 3px solid #4A6B4A;
+    border-bottom: 3px solid #6B8B69;
     padding-bottom: 15px;
     text-align: center;
 }
@@ -121,12 +121,12 @@ header h1, header p {
 .toc-item {
     padding: 15px 20px;
     background: linear-gradient(135deg, #F0F5F0 0%, #E8F0E8 100%);
-    border-left: 4px solid #2D472D;
+    border-left: 4px solid #4E684C;
     border-radius: 5px;
     text-align: center;
 }
 .toc-item a {
-    color: #2D472D;
+    color: #4E684C;
     text-decoration: none;
     font-weight: bold;
     font-size: 1.1em;
@@ -134,8 +134,8 @@ header h1, header p {
     transition: 0.3s;
 }
 .toc-item a:hover {
-    color: #4A6B4A;
-    text-shadow: 0 2px 5px rgba(45, 71, 45, 0.2);
+    color: #6B8B69;
+    text-shadow: 0 2px 5px rgba(78, 104, 76, 0.2);
 }
 
 .content {
@@ -144,14 +144,14 @@ header h1, header p {
     padding: 40px;
     background: white;
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(45, 71, 45, 0.1);
-    border-left: 5px solid #2D472D;
+    box-shadow: 0 4px 15px rgba(78, 104, 76, 0.1);
+    border-left: 5px solid #4E684C;
 }
 .content h2 {
-    color: #2D472D;
+    color: #4E684C;
     font-size: 2.2em;
     margin-bottom: 30px;
-    border-bottom: 3px solid #4A6B4A;
+    border-bottom: 3px solid #6B8B69;
     padding-bottom: 15px;
     scroll-margin-top: 100px;
 }
@@ -172,14 +172,20 @@ header h1, header p {
     padding: 20px;
     border-radius: 5px;
     text-align: center;
-    border-left: 4px solid #2D472D;
+    border-left: 4px solid #4E684C;
 }
 .time {
-    color: #2D472D;
+    color: #4E684C;
     font-weight: bold;
     font-size: 1.1em;
     display: block;
     margin-bottom: 5px;
+    font-family: 'Cormorant Garamond', serif;
+}
+.schedule-text {
+    font-size: 1.05em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 .schedule p:last-child {
     grid-column: 1 / -1;
@@ -189,7 +195,7 @@ header h1, header p {
     margin-bottom: 25px;
 }
 .address-block strong {
-    color: #2D472D;
+    color: #4E684C;
     font-size: 1.1em;
     display: block;
     margin-bottom: 5px;
@@ -204,7 +210,7 @@ header h1, header p {
     margin-bottom: 25px;
 }
 .story-section strong {
-    color: #2D472D;
+    color: #4E684C;
     font-size: 1.15em;
     display: block;
     margin-bottom: 8px;
@@ -213,6 +219,19 @@ header h1, header p {
     margin: 0;
     font-size: 1.05em;
     line-height: 1.6;
+}
+
+.dresscode-item {
+    margin-bottom: 15px;
+}
+.dresscode-item strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.contact-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1em;
 }
 
 .divider {
@@ -236,34 +255,34 @@ header h1, header p {
 footer {
     text-align: center;
     padding: 40px 20px;
-    background: linear-gradient(135deg, #2D472D 0%, #3D5A3D 100%);
+    background: linear-gradient(135deg, #4E684C 0%, #5D7A5B 100%);
     color: white;
     margin-top: 80px;
     font-size: 1.1em;
 }
 a {
-    color: #2D472D;
+    color: #4E684C;
     text-decoration: none;
     font-weight: bold;
     transition: 0.3s;
 }
 a:hover {
-    color: #4A6B4A;
+    color: #6B8B69;
     text-decoration: underline;
 }
 .nav-link {
     display: inline-block;
     margin: 10px 20px;
     padding: 10px 20px;
-    background: linear-gradient(135deg, #2D472D 0%, #3D5A3D 100%);
+    background: linear-gradient(135deg, #4E684C 0%, #5D7A5B 100%);
     color: white;
     border-radius: 5px;
     text-decoration: none;
     transition: 0.3s;
 }
 .nav-link:hover {
-    background: linear-gradient(135deg, #3D5A3D 0%, #4A6B4A 100%);
-    box-shadow: 0 4px 10px rgba(45, 71, 45, 0.3);
+    background: linear-gradient(135deg, #5D7A5B 0%, #6B8B69 100%);
+    box-shadow: 0 4px 10px rgba(78, 104, 76, 0.3);
 }
 
 /* Tablet */
@@ -290,6 +309,9 @@ a:hover {
     }
     .sub {
         font-size: clamp(0.9em, 1.5vw, 1.1em);
+    }
+    .access {
+        gap: 20px;
     }
     .content {
         margin: 30px auto;
@@ -371,17 +393,17 @@ a:hover {
 
 <!-- TABLE OF CONTENTS -->
 <section class="toc">
-  <h2>📑 Übersicht</h2>
+  <h2>Übersicht</h2>
   <div class="toc-list">
     <div class="toc-item"><a href="#zusage">✉️ Zur Zusage</a></div>
     <div class="toc-item"><a href="#erinnerungen">📸 Erinnerungen</a></div>
     <div class="toc-item"><a href="#ablauf">🕐 Ablauf</a></div>
     <div class="toc-item"><a href="#adressen">📍 Adressen</a></div>
-    <div class="toc-item"><a href="#dresscode">💚 Dresscode</a></div>
+    <div class="toc-item"><a href="#dresscode">👗 Dresscode</a></div>
     <div class="toc-item"><a href="#kuchen">🍰 Kuchenbuffet</a></div>
-    <div class="toc-item"><a href="#geschenke">🎀 Geschenke</a></div>
+    <div class="toc-item"><a href="#geschenke">🎁 Geschenke</a></div>
     <div class="toc-item"><a href="#geschichte">🤍 Unsere Geschichte</a></div>
-    <div class="toc-item"><a href="#kontakte">📱 Kontakte</a></div>
+    <div class="toc-item"><a href="#kontakte">☎️ Kontakte</a></div>
   </div>
 </section>
 
@@ -401,15 +423,15 @@ a:hover {
 <section class="content" id="ablauf">
   <h2>Ablauf</h2>
   <div class="schedule">
-    <p><span class="time">12:30 Uhr</span>Eintrudeln</p>
-    <p><span class="time">12:30 Uhr</span>TRAUUNG</p>
-    <p><span class="time">14:30 – 17:30 Uhr</span>SEKTEMPFANG</p>
-    <p><span class="time">17:30 Uhr</span>ORTSWECHSEL</p>
-    <p><span class="time">18:00 Uhr</span>EINLASS KAMPER HOF</p>
-    <p><span class="time">18:30 Uhr</span>ABENDESSEN mit Programm</p>
-    <p><span class="time">21:30 Uhr</span>ERÖFFNUNGSTANZ</p>
-    <p><span class="time">22:00 Uhr</span>HOCHZEITSTORTE</p>
-    <p><span class="time">24:00 Uhr</span>MITTERNACHTSSNACK</p>
+    <p><span class="time">12:30 Uhr</span><span class="schedule-text">Eintrudeln</span></p>
+    <p><span class="time">12:30 Uhr</span><span class="schedule-text">Trauung</span></p>
+    <p><span class="time">14:30 – 17:30 Uhr</span><span class="schedule-text">Sektempfang</span></p>
+    <p><span class="time">17:30 Uhr</span><span class="schedule-text">Ortswechsel</span></p>
+    <p><span class="time">18:00 Uhr</span><span class="schedule-text">Einlass Kamper Hof</span></p>
+    <p><span class="time">18:30 Uhr</span><span class="schedule-text">Abendessen mit Programm</span></p>
+    <p><span class="time">21:30 Uhr</span><span class="schedule-text">Eröffnungstanz</span></p>
+    <p><span class="time">22:00 Uhr</span><span class="schedule-text">Hochzeitstorte</span></p>
+    <p><span class="time">24:00 Uhr</span><span class="schedule-text">Mitternachtssnack</span></p>
   </div>
 </section>
 
@@ -455,9 +477,14 @@ a:hover {
 <!-- DRESSCODE -->
 <section class="content" id="dresscode">
   <h2>Dresscode</h2>
-  <p><strong>Damen:</strong> Cocktail– oder Abendkleid<br>
-  Farben wie weiß oder beige sind nicht erwünscht.</p>
-  <p><strong>Herren:</strong> Anzug</p>
+  <div class="dresscode-item">
+    <strong>Damen:</strong>
+    <p>Cocktail– oder Abendkleid<br>Farben wie weiß oder beige sind nicht erwünscht.</p>
+  </div>
+  <div class="dresscode-item">
+    <strong>Herren:</strong>
+    <p>Anzug</p>
+  </div>
 </section>
 
 <!-- KUCHENBUFFET -->
@@ -504,9 +531,9 @@ a:hover {
 <section class="content" id="kontakte">
   <h2>Kontakte</h2>
   <p><strong>TERESA MARIA FÄRBER</strong><br>
-  +49 1575 5998493</p>
+  <span class="contact-number">+49 1575 5998493</span></p>
   <p><strong>RALF GUNDERLOCH</strong><br>
-  +49 1573 5316143</p>
+  <span class="contact-number">+49 1573 5316143</span></p>
 </section>
 
 <footer>
