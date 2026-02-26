@@ -53,12 +53,12 @@ body {
 .toggle-password {
     background-color: #F5F8F5;
     border: none;
-    border-radius: 3px;
-    width: 28px;
-    height: 28px;
+    border-radius: 2px;
+    width: 15mm;
+    height: 15mm;
     cursor: pointer;
     color: #4E684C;
-    font-size: 13px;
+    font-size: 11px;
     font-weight: bold;
     transition: 0.3s;
     flex-shrink: 0;
@@ -94,9 +94,9 @@ body {
 }
 header.hero {
     background-size: cover;
-    background-position: center top;
-    background-attachment: fixed;
-    width: 100%;
+    background-position: center;
+    background-attachment: scroll;
+    width: 100vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -271,24 +271,20 @@ header h1, header p {
 /* Bilder mit Scrolling-Text Overlay */
 .image-section {
     position: relative;
-    width: 100%;
+    width: 100vw;
     min-height: 100vh;
 }
 
 .image-container {
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.image-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center top;
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
 }
 
 .image-overlay {
@@ -383,6 +379,9 @@ a:hover {
     }
     .image-container {
         height: 80vh;
+    }
+    .image-section {
+        min-height: 80vh;
     }
 }
 
@@ -568,8 +567,7 @@ a:hover {
 
 <!-- KIRCHE MIT DRESSCODE -->
 <section class="image-section">
-  <div class="image-container">
-    <img src="church.jpg" alt="Kirche">
+  <div class="image-container" style="background-image:url('church.jpg');">
     <div class="image-overlay"></div>
   </div>
   <div class="image-content">
@@ -600,8 +598,7 @@ a:hover {
 
 <!-- ABOUT MIT GESCHICHTE -->
 <section class="image-section">
-  <div class="image-container">
-    <img src="about.jpg" alt="Über uns">
+  <div class="image-container" style="background-image:url('about.jpg');">
     <div class="image-overlay"></div>
   </div>
   <div class="image-content">
