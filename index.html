@@ -64,7 +64,7 @@ header.hero {
     background-size: cover;
     background-position: center top;
     background-attachment: fixed;
-    height: 70vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -72,8 +72,6 @@ header.hero {
     color: white;
     text-align: center;
     position: relative;
-    min-height: 500px;
-    max-height: 800px;
 }
 .shade {
     position: absolute;
@@ -95,6 +93,50 @@ header h1, header p {
 .sub {
     font-size: clamp(1em, 2vw, 1.3em);
 }
+
+/* TOC (Table of Contents) */
+.toc {
+    background: white;
+    padding: 40px;
+    margin: 0 auto;
+    max-width: 900px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(45, 71, 45, 0.1);
+    border-left: 5px solid #2D472D;
+}
+.toc h2 {
+    color: #2D472D;
+    font-size: 2.2em;
+    margin-bottom: 30px;
+    border-bottom: 3px solid #4A6B4A;
+    padding-bottom: 15px;
+    text-align: center;
+}
+.toc-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+.toc-item {
+    padding: 15px 20px;
+    background: linear-gradient(135deg, #F0F5F0 0%, #E8F0E8 100%);
+    border-left: 4px solid #2D472D;
+    border-radius: 5px;
+    text-align: center;
+}
+.toc-item a {
+    color: #2D472D;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    display: block;
+    transition: 0.3s;
+}
+.toc-item a:hover {
+    color: #4A6B4A;
+    text-shadow: 0 2px 5px rgba(45, 71, 45, 0.2);
+}
+
 .content {
     max-width: 900px;
     margin: 50px auto;
@@ -110,6 +152,7 @@ header h1, header p {
     margin-bottom: 30px;
     border-bottom: 3px solid #4A6B4A;
     padding-bottom: 15px;
+    scroll-margin-top: 100px;
 }
 .content p {
     font-size: 1.1em;
@@ -139,24 +182,21 @@ header h1, header p {
 }
 .divider {
     width: 100%;
-    height: 500px;
+    height: 100vh;
     object-fit: cover;
     object-position: center top;
-    margin: 80px auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(45, 71, 45, 0.2);
-    max-width: 1200px;
+    margin: 0;
+    padding: 0;
     display: block;
 }
 .parallax-image {
     width: 100%;
-    height: 500px;
+    height: 100vh;
     background-size: cover;
     background-position: center top;
     background-attachment: fixed;
-    margin: 80px auto;
-    border-radius: 8px;
-    max-width: 1200px;
+    margin: 0;
+    padding: 0;
 }
 footer {
     text-align: center;
@@ -198,10 +238,13 @@ a:hover {
         padding: 30px;
     }
     header.hero {
-        height: 60vh;
+        height: 80vh;
     }
     .divider {
-        height: 400px;
+        height: 80vh;
+    }
+    .toc-list {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -226,19 +269,19 @@ a:hover {
         font-size: 1em;
     }
     .divider {
-        height: 300px;
-        margin: 60px auto;
-        border-radius: 5px;
+        height: 60vh;
     }
     header.hero {
-        height: 50vh;
-        min-height: 400px;
+        height: 60vh;
     }
     .schedule {
         grid-template-columns: 1fr;
     }
     .access button {
         font-size: 1.8em;
+    }
+    .toc-list {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -263,12 +306,13 @@ a:hover {
         margin-bottom: 15px;
     }
     .divider {
-        height: 250px;
-        margin: 40px auto;
+        height: 50vh;
     }
     header.hero {
-        height: 45vh;
-        min-height: 350px;
+        height: 50vh;
+    }
+    .toc h2 {
+        font-size: 1.6em;
     }
 }
 </style>
@@ -283,17 +327,115 @@ a:hover {
 
 <div id="main">
 
-<header class="hero" style="background-image:url('Einjähriges.jpg');">
+<header class="hero" style="background-image:url('hero.jpg');">
   <div class="shade"></div>
   <h1 class="title">Teresa & Ralf</h1>
   <p class="sub">26. September 2026 · Kevelaer</p>
 </header>
 
-<section class="content">
+<!-- TABLE OF CONTENTS -->
+<section class="toc">
+  <h2>📑 Übersicht</h2>
+  <div class="toc-list">
+    <div class="toc-item"><a href="#zusage">📝 Zur Zusage</a></div>
+    <div class="toc-item"><a href="#erinnerungen">📸 Erinnerungen</a></div>
+    <div class="toc-item"><a href="#ablauf">⏰ Ablauf</a></div>
+    <div class="toc-item"><a href="#adressen">📍 Adressen</a></div>
+    <div class="toc-item"><a href="#dresscode">👗 Dresscode</a></div>
+    <div class="toc-item"><a href="#empfang">☕ Empfang</a></div>
+    <div class="toc-item"><a href="#geschenke">🎁 Geschenke</a></div>
+    <div class="toc-item"><a href="#geschichte">💚 Unsere Geschichte</a></div>
+    <div class="toc-item"><a href="#kontakte">📞 Kontakte</a></div>
+  </div>
+</section>
+
+<img src="about.jpg" alt="Über uns" class="divider">
+
+<!-- ZUR ZUSAGE -->
+<section class="content" id="zusage">
   <a href="https://1drv.ms/x/c/69f6cbaf37066ebb/IQAjqLdmacT9QqiC2yMejxdgAdA57zvE45gLHKE_SAXtLoE?e=LYIO1f" class="nav-link" target="_blank">📝 Zur Zusage</a>
 </section>
 
-<section class="content">
+<img src="Einjähriges.jpg" alt="Erinnerungen" class="divider">
+
+<!-- ERINNERUNGEN -->
+<section class="content" id="erinnerungen">
+  <h2>Erinnerungen</h2>
+  <p>Fotos von unserem besonderen Tag:<br>
+  <a href="https://photos.app.goo.gl/9JvJRk1kwqA1CmAXA">Link zu den Fotos</a></p>
+</section>
+
+<img src="about.jpg" alt="Ablauf" class="divider">
+
+<!-- ABLAUF -->
+<section class="content" id="ablauf">
+  <h2>Ablauf</h2>
+  <div class="schedule">
+    <p><span class="time">12:15 Uhr</span>Eintrudeln</p>
+    <p><span class="time">12:30 Uhr</span>Trauung + Hl. Messe</p>
+    <p><span class="time">15:00 – 17:30 Uhr</span>Sektempfang mit Kaffee, Kuchen & Kanapees</p>
+    <p><span class="time">18:00 Uhr</span>Abendessen mit Programm</p>
+    <p><span class="time">22:00 Uhr</span>First Dance & Party</p>
+  </div>
+</section>
+
+<img src="Einjähriges.jpg" alt="Adressen" class="divider">
+
+<!-- ADRESSEN -->
+<section class="content" id="adressen">
+  <h2>Adressen</h2>
+  <p><strong>Trauung:</strong><br>
+  Basilika in Kevelaer<br>
+  Kapellenpl. 35, 47623 Kevelaer</p>
+  <p><strong>Sektempfang:</strong><br>
+  Josef–Schotten–Schützenhalle<br>
+  Twistedener Str. 285, 47623 Kevelaer</p>
+  <p><strong>Feier:</strong><br>
+  Kamper Hof<br>
+  Kamper Str. 8, 47495 Rheinberg</p>
+  <p><strong>Parkmöglichkeiten - Trauung:</strong><br>
+  Basilikastraße 2, 47623 Kevelaer<br>
+  Am bhf 55, 47623 Kevelaer</p>
+  <p><strong>Parkmöglichkeit - Feier:</strong><br>
+  Parkplatz am Kräuterturm<br>
+  Kamperstraße 21<br>
+  (kostenlose Entwertung in der Location)</p>
+  <p><strong>Übernachtungsmöglichkeit:</strong><br>
+  Hotel Am Fischmarkt<br>
+  Fischmarkt 2–5, 47495 Rheinberg<br>
+  Stichwort: Gunderloch</p>
+</section>
+
+<img src="about.jpg" alt="Dresscode" class="divider">
+
+<!-- DRESSCODE -->
+<section class="content" id="dresscode">
+  <h2>Dresscode</h2>
+  <p><strong>Damen:</strong> Cocktail– oder Abendkleid<br>
+  Farben wie weiß oder beige sind nicht erwünscht.</p>
+  <p><strong>Herren:</strong> Anzug</p>
+</section>
+
+<img src="Einjähriges.jpg" alt="Empfang" class="divider">
+
+<!-- EMPFANG -->
+<section class="content" id="empfang">
+  <h2>Empfang</h2>
+  <p>Über eine Spende zu unserem Kuchenbuffet –mit Rücksprache– würden wir uns sehr freuen.</p>
+</section>
+
+<img src="about.jpg" alt="Geschenke" class="divider">
+
+<!-- GESCHENKE -->
+<section class="content" id="geschenke">
+  <h2>Geschenke</h2>
+  <p>Eure Anwesenheit an unserem Hochzeitstag ist für uns das größte Geschenk. Wenn ihr uns darüber hinaus eine Freude machen möchtet, danken wir euch herzlich für einen finanziellen Beitrag zu unserer gemeinsamen Zukunft.</p>
+</section>
+
+<img src="Einjähriges.jpg" alt="Unsere Geschichte" class="divider">
+
+<!-- UNSERE GESCHICHTE -->
+<section class="content" id="geschichte">
   <h2>Unsere Geschichte</h2>
   <p><strong>Kennenlernen:</strong><br><br>
   In einem Loch im Boden, da lebte ein Ralf.<br>
@@ -324,75 +466,15 @@ a:hover {
   </p>
 </section>
 
-<img src="about.jpg" alt="Über uns" class="divider">
+<img src="about.jpg" alt="Kontakte" class="divider">
 
-<section class="content">
-  <h2>Ablauf</h2>
-  <div class="schedule">
-    <p><span class="time">12:15 Uhr</span>Eintrudeln</p>
-    <p><span class="time">12:30 Uhr</span>Trauung + Hl. Messe</p>
-    <p><span class="time">15:00 – 17:30 Uhr</span>Sektempfang mit Kaffee, Kuchen & Kanapees</p>
-    <p><span class="time">18:00 Uhr</span>Abendessen mit Programm</p>
-    <p><span class="time">22:00 Uhr</span>First Dance & Party</p>
-  </div>
-</section>
-
-<img src="Einjähriges.jpg" alt="Einjähriges" class="divider">
-
-<section class="content">
-  <h2>Ankunft</h2>
-  <p><strong>Trauung:</strong><br>
-  Basilika in Kevelaer<br>
-  Kapellenpl. 35, 47623 Kevelaer</p>
-  <p><strong>Sektempfang:</strong><br>
-  Josef–Schotten–Schützenhalle<br>
-  Twistedener Str. 285, 47623 Kevelaer</p>
-  <p><strong>Feier:</strong><br>
-  Kamper Hof<br>
-  Kamper Str. 8, 47495 Rheinberg</p>
-  <p><strong>Parkmöglichkeiten - Trauung:</strong><br>
-  Basilikastraße 2, 47623 Kevelaer<br>
-  Am bhf 55, 47623 Kevelaer</p>
-  <p><strong>Parkmöglichkeit - Feier:</strong><br>
-  Parkplatz am Kräuterturm<br>
-  Kamperstraße 21<br>
-  (kostenlose Entwertung in der Location)</p>
-  <p><strong>Übernachtungsmöglichkeit:</strong><br>
-  Hotel Am Fischmarkt<br>
-  Fischmarkt 2–5, 47495 Rheinberg<br>
-  Stichwort: Gunderloch</p>
-</section>
-
-<section class="content">
-  <h2>Dresscode</h2>
-  <p><strong>Damen:</strong> Cocktail– oder Abendkleid<br>
-  Farben wie weiß oder beige sind nicht erwünscht.</p>
-  <p><strong>Herren:</strong> Anzug</p>
-</section>
-
-<section class="content">
-  <h2>Geschenke</h2>
-  <p>Eure Anwesenheit an unserem Hochzeitstag ist für uns das größte Geschenk. Wenn ihr uns darüber hinaus eine Freude machen möchtet, danken wir euch herzlich für einen finanziellen Beitrag zu unserer gemeinsamen Zukunft.</p>
-</section>
-
-<section class="content">
-  <h2>Empfang</h2>
-  <p>Über eine Spende zu unserem Kuchenbuffet –mit Rücksprache– würden wir uns sehr freuen.</p>
-</section>
-
-<section class="content">
+<!-- KONTAKTE -->
+<section class="content" id="kontakte">
   <h2>Kontakte</h2>
   <p><strong>TERESA MARIA FÄRBER</strong><br>
   +49 1575 5998493</p>
   <p><strong>RALF GUNDERLOCH</strong><br>
   +49 1573 5316143</p>
-</section>
-
-<section class="content">
-  <h2>Erinnerungen</h2>
-  <p>Fotos von unserem besonderen Tag:<br>
-  <a href="https://photos.app.goo.gl/9JvJRk1kwqA1CmAXA">Link zu den Fotos</a></p>
-  <img src="Antrag.jpg" alt="Der Antrag" class="divider">
 </section>
 
 <footer>
