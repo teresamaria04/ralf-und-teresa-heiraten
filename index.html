@@ -24,10 +24,6 @@ body {
     align-items: center;
     height: 100vh;
     background: linear-gradient(135deg, #4E684C 0%, #6B8B69 50%, #5D7A5B 100%);
-    background-image: 
-        repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,.05) 10px, rgba(255,255,255,.05) 20px),
-        repeating-linear-gradient(-45deg, transparent, transparent 10px, rgba(255,255,255,.05) 10px, rgba(255,255,255,.05) 20px),
-        linear-gradient(135deg, #4E684C 0%, #6B8B69 50%, #5D7A5B 100%);
     gap: 30px;
     padding: 20px;
     position: relative;
@@ -91,7 +87,7 @@ body {
     min-width: 200px;
     background-color: #F5F8F5;
     color: #4E684C;
-    padding-right: clamp(35px, 8vw, 45px);
+    padding-right: clamp(25px, 6vw, 35px);
 }
 .toggle-password {
     position: absolute;
@@ -99,17 +95,18 @@ body {
     background-color: #F5F8F5;
     border: none;
     border-radius: 2px;
-    width: 15mm;
-    height: 15mm;
+    width: 8mm;
+    height: 8mm;
     cursor: pointer;
     color: #4E684C;
-    font-size: 11px;
+    font-size: 8px;
     font-weight: bold;
     transition: 0.3s;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0;
+    line-height: 1;
 }
 .toggle-password:hover {
     background-color: #E8F0E8;
@@ -144,8 +141,6 @@ header.hero {
     background-attachment: scroll;
     width: 100vw;
     height: 100vh;
-    min-height: 500px;
-    max-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -322,6 +317,7 @@ header h1, header p {
     display: block;
     max-width: 100%;
 }
+
 .parallax-image {
     width: 100%;
     height: clamp(50vh, 100vh, 100vh);
@@ -332,6 +328,7 @@ header h1, header p {
     padding: 0;
     max-width: 100%;
 }
+
 footer {
     text-align: center;
     padding: clamp(20px, 4vw, 40px);
@@ -374,7 +371,6 @@ a:hover {
     }
     header.hero {
         height: 80vh;
-        min-height: 400px;
         background-position: center;
         background-attachment: scroll;
     }
@@ -422,7 +418,6 @@ a:hover {
     }
     header.hero {
         height: 70vh;
-        min-height: 300px;
         background-position: center;
         background-attachment: scroll;
     }
@@ -467,7 +462,6 @@ a:hover {
     }
     header.hero {
         height: 60vh;
-        min-height: 250px;
         background-position: center;
         background-attachment: scroll;
     }
