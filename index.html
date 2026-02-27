@@ -23,24 +23,46 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url('hero.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: scroll;
+    background: linear-gradient(135deg, #4E684C 0%, #6B8B69 50%, #5D7A5B 100%);
+    background-image: 
+        repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,.05) 10px, rgba(255,255,255,.05) 20px),
+        repeating-linear-gradient(-45deg, transparent, transparent 10px, rgba(255,255,255,.05) 10px, rgba(255,255,255,.05) 20px),
+        linear-gradient(135deg, #4E684C 0%, #6B8B69 50%, #5D7A5B 100%);
     gap: 30px;
     padding: 20px;
     position: relative;
+    overflow: hidden;
 }
+
 .access::before {
-    content: '';
+    content: '🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿';
     position: absolute;
-    top: 0;
+    top: -20px;
     left: 0;
     right: 0;
-    bottom: 0;
-    background: rgba(78, 104, 76, 0.6);
+    font-size: 3em;
+    opacity: 0.1;
+    animation: float 6s ease-in-out infinite;
     z-index: 0;
 }
+
+.access::after {
+    content: '🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿';
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    right: 0;
+    font-size: 3em;
+    opacity: 0.1;
+    animation: float 6s ease-in-out infinite reverse;
+    z-index: 0;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
 .access h1 {
     color: white;
     font-size: clamp(1.8em, 5vw, 2.5em);
@@ -138,7 +160,7 @@ header.hero {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(78, 104, 76, 0.4);
+    background: rgba(0, 0, 0, 0.3);
     z-index: 1;
 }
 header h1, header p {
@@ -638,7 +660,7 @@ function togglePassword() {
     
     if (pwInput.type === 'password') {
         pwInput.type = 'text';
-        btn.textContent = '👁���‍🗨️';
+        btn.textContent = '👁️‍🗨️';
     } else {
         pwInput.type = 'password';
         btn.textContent = '👁️';
