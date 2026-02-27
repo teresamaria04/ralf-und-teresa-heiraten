@@ -23,15 +23,31 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(135deg, #4E684C 0%, #6B8B69 50%, #5D7A5B 100%);
+    background-image: url('hero.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
     gap: 30px;
     padding: 20px;
+    position: relative;
+}
+.access::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(78, 104, 76, 0.6);
+    z-index: 0;
 }
 .access h1 {
     color: white;
     font-size: clamp(1.8em, 5vw, 2.5em);
     margin-bottom: 0;
     text-align: center;
+    position: relative;
+    z-index: 1;
 }
 .password-container {
     display: flex;
@@ -42,6 +58,7 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
+    z-index: 1;
 }
 .access input {
     padding: clamp(8px, 2vw, 12px) clamp(12px, 3vw, 20px);
@@ -57,18 +74,23 @@ body {
 .toggle-password {
     position: absolute;
     right: 8px;
-    background-color: transparent;
+    background-color: #F5F8F5;
     border: none;
-    border-radius: 5px;
-    padding: clamp(4px, 1vw, 6px) clamp(6px, 1.5vw, 8px);
+    border-radius: 2px;
+    width: 15mm;
+    height: 15mm;
     cursor: pointer;
     color: #4E684C;
-    font-size: clamp(0.8em, 1.5vw, 0.9em);
+    font-size: 11px;
     font-weight: bold;
     transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
 }
 .toggle-password:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: #E8F0E8;
 }
 .access button {
     padding: clamp(6px, 1.5vw, 8px) clamp(18px, 3vw, 24px);
@@ -83,6 +105,8 @@ body {
     transition: 0.3s;
     width: 100%;
     max-width: 400px;
+    position: relative;
+    z-index: 1;
 }
 .access button:hover {
     color: #E8F0E8;
@@ -115,10 +139,11 @@ header.hero {
     right: 0;
     bottom: 0;
     background: rgba(78, 104, 76, 0.4);
+    z-index: 1;
 }
 header h1, header p {
     position: relative;
-    z-index: 1;
+    z-index: 2;
 }
 .title {
     font-size: clamp(2em, 5vw, 4em);
@@ -441,7 +466,7 @@ a:hover {
   <button onclick="openSite()">Weiter</button>
 </div>
 
-<div id="main">
+<div id="main" style="display:none;">
 
 <header class="hero" style="background-image:url('hero.jpg');">
   <div class="shade"></div>
@@ -593,15 +618,16 @@ a:hover {
 </div>
 
 <script>
-// Passwort im LocalStorage speichern
+// Passwort NICHT speichern - immer fragen!
 function openSite() {
     const pw = document.getElementById('pw').value;
     if (pw === 'Gunderlochs2026') {
-        localStorage.setItem('weddingSiteUnlocked', 'true');
         document.getElementById('gate').style.display = 'none';
         document.getElementById('main').style.display = 'block';
+        window.scrollTo(0, 0);
     } else {
         alert('Falsches Passwort!');
+        document.getElementById('pw').value = '';
     }
 }
 
@@ -612,20 +638,12 @@ function togglePassword() {
     
     if (pwInput.type === 'password') {
         pwInput.type = 'text';
-        btn.textContent = '👁️‍🗨️';
+        btn.textContent = '👁���‍🗨️';
     } else {
         pwInput.type = 'password';
         btn.textContent = '👁️';
     }
 }
-
-// Beim Neuladen prüfen, ob Passwort bereits eingegeben wurde
-window.addEventListener('load', function() {
-    if (localStorage.getItem('weddingSiteUnlocked') === 'true') {
-        document.getElementById('gate').style.display = 'none';
-        document.getElementById('main').style.display = 'block';
-    }
-});
 
 // Enter-Taste zum Absenden
 document.addEventListener('DOMContentLoaded', function() {
@@ -637,7 +655,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Links in neuem Tab öffnen und Seite nicht neuladen
+// Links in neuem Tab öffnen
 document.addEventListener('click', function(e) {
     if (e.target.tagName === 'A' && e.target.getAttribute('target') === '_blank') {
         e.target.click();
