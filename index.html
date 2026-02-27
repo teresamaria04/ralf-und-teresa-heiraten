@@ -31,25 +31,31 @@ body {
 }
 
 .access::before {
-    content: '🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿';
+    content: '';
     position: absolute;
-    top: -20px;
-    left: 0;
-    right: 0;
-    font-size: 3em;
-    opacity: 0.1;
+    top: -5%;
+    left: 5%;
+    width: 200px;
+    height: 300px;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 150"><g stroke="rgba(255,255,255,0.15)" stroke-width="0.8" fill="none"><path d="M50 10 Q48 20 50 30 Q52 40 50 50"/><path d="M50 30 Q40 35 35 40"/><path d="M50 30 Q60 35 65 40"/><path d="M50 50 Q45 60 42 70"/><path d="M50 50 Q55 60 58 70"/><path d="M50 70 Q48 80 50 90 Q52 100 50 110"/><path d="M50 90 Q40 95 35 100"/><path d="M50 90 Q60 95 65 100"/></g></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.3;
     animation: float 6s ease-in-out infinite;
     z-index: 0;
 }
 
 .access::after {
-    content: '🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿 🌿';
+    content: '';
     position: absolute;
-    bottom: -20px;
-    left: 0;
-    right: 0;
-    font-size: 3em;
-    opacity: 0.1;
+    bottom: -5%;
+    right: 5%;
+    width: 200px;
+    height: 300px;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 150"><g stroke="rgba(255,255,255,0.15)" stroke-width="0.8" fill="none"><path d="M50 10 Q48 20 50 30 Q52 40 50 50"/><path d="M50 30 Q40 35 35 40"/><path d="M50 30 Q60 35 65 40"/><path d="M50 50 Q45 60 42 70"/><path d="M50 50 Q55 60 58 70"/><path d="M50 70 Q48 80 50 90 Q52 100 50 110"/><path d="M50 90 Q40 95 35 100"/><path d="M50 90 Q60 95 65 100"/></g></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.3;
     animation: float 6s ease-in-out infinite reverse;
     z-index: 0;
 }
@@ -67,16 +73,26 @@ body {
     position: relative;
     z-index: 1;
 }
+
+.password-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    gap: 0;
+    position: relative;
+    z-index: 1;
+}
+
 .password-container {
     display: flex;
     gap: 5px;
     width: 100%;
-    max-width: 400px;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     position: relative;
-    z-index: 1;
 }
 .access input {
     padding: clamp(8px, 2vw, 12px) clamp(12px, 3vw, 20px);
@@ -92,6 +108,8 @@ body {
 .toggle-password {
     position: absolute;
     right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
     background-color: #F5F8F5;
     border: none;
     border-radius: 2px;
@@ -123,9 +141,7 @@ body {
     font-family: 'Cormorant Garamond', serif;
     transition: 0.3s;
     width: 100%;
-    max-width: 400px;
-    position: relative;
-    z-index: 1;
+    margin-top: 10px;
 }
 .access button:hover {
     color: #E8F0E8;
@@ -475,11 +491,13 @@ a:hover {
 
 <div class="access" id="gate">
   <h1>Willkommen</h1>
-  <div class="password-container">
-    <input type="password" id="pw" placeholder="Zugangscode">
-    <button class="toggle-password" onclick="togglePassword()" title="PIN anzeigen">👁️</button>
+  <div class="password-wrapper">
+    <div class="password-container">
+      <input type="password" id="pw" placeholder="Zugangscode">
+      <button class="toggle-password" onclick="togglePassword()" title="PIN anzeigen">👁️</button>
+    </div>
+    <button onclick="openSite()">Weiter</button>
   </div>
-  <button onclick="openSite()">Weiter</button>
 </div>
 
 <div id="main" style="display:none;">
