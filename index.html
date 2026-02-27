@@ -35,10 +35,13 @@ body {
 }
 .password-container {
     display: flex;
-    align-items: center;
+    gap: 5px;
     width: 100%;
     max-width: 400px;
-    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
 .access input {
     padding: clamp(8px, 2vw, 12px) clamp(12px, 3vw, 20px);
@@ -49,26 +52,23 @@ body {
     min-width: 200px;
     background-color: #F5F8F5;
     color: #4E684C;
+    padding-right: clamp(35px, 8vw, 45px);
 }
 .toggle-password {
-    background-color: #F5F8F5;
+    position: absolute;
+    right: 8px;
+    background-color: transparent;
     border: none;
-    border-radius: 2px;
-    width: 15mm;
-    height: 15mm;
+    border-radius: 5px;
+    padding: clamp(4px, 1vw, 6px) clamp(6px, 1.5vw, 8px);
     cursor: pointer;
     color: #4E684C;
-    font-size: 11px;
+    font-size: clamp(0.8em, 1.5vw, 0.9em);
     font-weight: bold;
     transition: 0.3s;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
 }
 .toggle-password:hover {
-    background-color: #E8F0E8;
+    background-color: rgba(255, 255, 255, 0.1);
 }
 .access button {
     padding: clamp(6px, 1.5vw, 8px) clamp(18px, 3vw, 24px);
@@ -98,6 +98,8 @@ header.hero {
     background-attachment: scroll;
     width: 100vw;
     height: 100vh;
+    min-height: 500px;
+    max-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -113,11 +115,10 @@ header.hero {
     right: 0;
     bottom: 0;
     background: rgba(78, 104, 76, 0.4);
-    z-index: 1;
 }
 header h1, header p {
     position: relative;
-    z-index: 2;
+    z-index: 1;
 }
 .title {
     font-size: clamp(2em, 5vw, 4em);
@@ -137,8 +138,6 @@ header h1, header p {
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(78, 104, 76, 0.1);
     border-left: 5px solid #4E684C;
-    position: relative;
-    z-index: 10;
 }
 .toc h2 {
     color: #4E684C;
@@ -181,8 +180,6 @@ header h1, header p {
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(78, 104, 76, 0.1);
     border-left: 5px solid #4E684C;
-    position: relative;
-    z-index: 10;
 }
 .content h2 {
     color: #4E684C;
@@ -268,65 +265,26 @@ header h1, header p {
     font-size: clamp(1em, 1.8vw, 1.1em);
 }
 
-/* Bilder mit Scrolling-Text Overlay */
-.image-section {
-    position: relative;
-    width: 100vw;
-    min-height: 100vh;
+.divider {
+    width: 100%;
+    height: clamp(50vh, 100vh, 100vh);
+    object-fit: cover;
+    object-position: center;
+    margin: 0;
+    padding: 0;
+    display: block;
+    max-width: 100%;
 }
-
-.image-container {
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.parallax-image {
+    width: 100%;
+    height: clamp(50vh, 100vh, 100vh);
     background-size: cover;
     background-position: center;
     background-attachment: scroll;
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
 }
-
-.image-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, transparent 0%, rgba(245, 248, 245, 0.8) 40%, rgba(245, 248, 245, 1) 70%);
-    pointer-events: none;
-    z-index: 5;
-}
-
-.image-content {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    padding: clamp(30px, 5vw, 50px) clamp(20px, 4vw, 40px);
-    max-width: 900px;
-    margin: 0 auto;
-    z-index: 10;
-    background: linear-gradient(to bottom, transparent 0%, rgba(245, 248, 245, 0.95) 30%, rgba(245, 248, 245, 1) 100%);
-}
-
-.image-content h2 {
-    color: #4E684C;
-    font-size: clamp(1.6em, 4vw, 2.2em);
-    margin-bottom: 30px;
-    border-bottom: 3px solid #6B8B69;
-    padding-bottom: 15px;
-}
-
-.image-content p {
-    font-size: clamp(1em, 2vw, 1.1em);
-    margin-bottom: 20px;
-    line-height: 1.8;
-    color: #3A3A3A;
-    text-align: justify;
-}
-
 footer {
     text-align: center;
     padding: clamp(20px, 4vw, 40px);
@@ -334,8 +292,6 @@ footer {
     color: white;
     margin-top: 80px;
     font-size: clamp(1em, 2vw, 1.1em);
-    position: relative;
-    z-index: 10;
 }
 a {
     color: #4E684C;
@@ -357,8 +313,6 @@ a:hover {
     text-decoration: none;
     transition: 0.3s;
     font-size: clamp(1em, 2vw, 1.1em);
-    position: relative;
-    z-index: 10;
 }
 .nav-link:hover {
     background: linear-gradient(135deg, #5D7A5B 0%, #6B8B69 100%);
@@ -373,15 +327,15 @@ a:hover {
     }
     header.hero {
         height: 80vh;
+        min-height: 400px;
+        background-position: center;
+        background-attachment: scroll;
+    }
+    .divider {
+        height: 80vh;
     }
     .toc-list {
         grid-template-columns: repeat(2, 1fr);
-    }
-    .image-container {
-        height: 80vh;
-    }
-    .image-section {
-        min-height: 80vh;
     }
 }
 
@@ -396,6 +350,12 @@ a:hover {
     .access {
         gap: 20px;
     }
+    .password-container {
+        flex-direction: row;
+    }
+    .access input {
+        min-width: auto;
+    }
     .content {
         margin: 30px auto;
         padding: 20px;
@@ -409,8 +369,15 @@ a:hover {
         font-size: 1em;
         text-align: left;
     }
+    .divider {
+        height: 70vh;
+        min-height: 400px;
+    }
     header.hero {
         height: 70vh;
+        min-height: 300px;
+        background-position: center;
+        background-attachment: scroll;
     }
     .schedule {
         grid-template-columns: 1fr;
@@ -420,12 +387,6 @@ a:hover {
     }
     .toc-list {
         grid-template-columns: 1fr;
-    }
-    .image-section {
-        min-height: 70vh;
-    }
-    .image-container {
-        height: 70vh;
     }
 }
 
@@ -453,14 +414,18 @@ a:hover {
     .content p {
         text-align: left;
     }
+    .divider {
+        height: 60vh;
+        min-height: 250px;
+    }
+    header.hero {
+        height: 60vh;
+        min-height: 250px;
+        background-position: center;
+        background-attachment: scroll;
+    }
     .toc h2 {
         font-size: 1.6em;
-    }
-    .image-section {
-        min-height: 60vh;
-    }
-    .image-container {
-        height: 60vh;
     }
 }
 </style>
@@ -476,7 +441,7 @@ a:hover {
   <button onclick="openSite()">Weiter</button>
 </div>
 
-<div id="main" style="display:none;">
+<div id="main">
 
 <header class="hero" style="background-image:url('hero.jpg');">
   <div class="shade"></div>
@@ -565,21 +530,18 @@ a:hover {
   </div>
 </section>
 
-<!-- KIRCHE MIT DRESSCODE -->
-<section class="image-section">
-  <div class="image-container" style="background-image:url('church.jpg');">
-    <div class="image-overlay"></div>
+<img src="church.jpg" alt="Kirche" class="divider">
+
+<!-- DRESSCODE -->
+<section class="content" id="dresscode">
+  <h2>Dresscode</h2>
+  <div class="dresscode-item">
+    <strong>Damen:</strong>
+    <p>Cocktail– oder Abendkleid<br>Farben wie weiß oder beige sind nicht erwünscht.</p>
   </div>
-  <div class="image-content">
-    <h2 id="dresscode">Dresscode</h2>
-    <div class="dresscode-item">
-      <strong>Damen:</strong>
-      <p>Cocktail– oder Abendkleid<br>Farben wie weiß oder beige sind nicht erwünscht.</p>
-    </div>
-    <div class="dresscode-item">
-      <strong>Herren:</strong>
-      <p>Anzug</p>
-    </div>
+  <div class="dresscode-item">
+    <strong>Herren:</strong>
+    <p>Anzug</p>
   </div>
 </section>
 
@@ -596,27 +558,24 @@ a:hover {
   <p>Eure Anwesenheit an unserem Hochzeitstag ist für uns das größte Geschenk. Wenn ihr uns darüber hinaus eine Freude machen möchtet, danken wir euch herzlich für einen <strong>finanziellen Beitrag</strong> zu unserer gemeinsamen Zukunft.</p>
 </section>
 
-<!-- ABOUT MIT GESCHICHTE -->
-<section class="image-section">
-  <div class="image-container" style="background-image:url('about.jpg');">
-    <div class="image-overlay"></div>
-  </div>
-  <div class="image-content">
-    <h2 id="geschichte">Unsere Geschichte</h2>
+<!-- UNSERE GESCHICHTE -->
+<section class="content" id="geschichte">
+  <h2>Unsere Geschichte</h2>
+  
+  <div class="story-section">
+    <p>In einem Loch im Boden, da lebte ein Ralf. In einem feuchten, schmutzigen Loch, wo es nach Moder riecht und Wurmzipfel von den Wänden herabhängen. Neee Spaaaß :D</p>
     
-    <div class="story-section">
-      <p>In einem Loch im Boden, da lebte ein Ralf. In einem feuchten, schmutzigen Loch, wo es nach Moder riecht und Wurmzipfel von den Wänden herabhängen. Neee Spaaaß :D</p>
-      
-      <p>Alles begann vor langer Zeit in einer weit, weit entfernten Galaxis in einer Höhle in Münster (adH). Da entschloss sich ein Ralf: "Ich ziehe in ein Abenteuer!". Derweil erschallten aus Gohrdor die Worte: „Kevelaer! Ehemann!", welche Gollum*ine krächzend von sich gab. So geschah es, dass Teresa am dritten Tage gen Osten schaute und ihren -noch unbekannten- Helden im Sonnenlicht erstrahlen sah...</p>
-      
-      <p>Ob das bei Euch genau so damals war? I doubt it!</p>
-    </div>
+    <p>Alles begann vor langer Zeit in einer weit, weit entfernten Galaxis in einer Höhle in Münster (adH). Da entschloss sich ein Ralf: "Ich ziehe in ein Abenteuer!". Derweil erschallten aus Gohrdor die Worte: „Kevelaer! Ehemann!", welche Gollum*ine krächzend von sich gab. So geschah es, dass Teresa am dritten Tage gen Osten schaute und ihren -noch unbekannten- Helden im Sonnenlicht erstrahlen sah...</p>
+    
+    <p>Ob das bei Euch genau so damals war? I doubt it!</p>
+  </div>
 
-    <div class="story-section">
-      <p>Über die Zeit hinweg merkten die beiden schnell, wie gut sie doch zueinander passten und wie sehr sie sich liebten. Schnell war klar: wir werden heiraten! Doch offiziell dauerte es noch eine gaaaanze Weile, welche Teresa echtes Kopfzerbrechen bescherte. Letzten Endes machte Ralf ihr den perfekten Antrag am perfekten Ort.</p>
-    </div>
+  <div class="story-section">
+    <p>Über die Zeit hinweg merkten die beiden schnell, wie gut sie doch zueinander passten und wie sehr sie sich liebten. Schnell war klar: wir werden heiraten! Doch offiziell dauerte es noch eine gaaaanze Weile, welche Teresa echtes Kopfzerbrechen bescherte. Letzten Endes machte Ralf ihr den perfekten Antrag am perfekten Ort.</p>
   </div>
 </section>
+
+<img src="about.jpg" alt="Über uns" class="divider">
 
 <!-- KONTAKTE -->
 <section class="content" id="kontakte">
@@ -634,16 +593,15 @@ a:hover {
 </div>
 
 <script>
-// Passwort NICHT speichern - immer fragen!
+// Passwort im LocalStorage speichern
 function openSite() {
     const pw = document.getElementById('pw').value;
     if (pw === 'Gunderlochs2026') {
+        localStorage.setItem('weddingSiteUnlocked', 'true');
         document.getElementById('gate').style.display = 'none';
         document.getElementById('main').style.display = 'block';
-        window.scrollTo(0, 0);
     } else {
         alert('Falsches Passwort!');
-        document.getElementById('pw').value = '';
     }
 }
 
@@ -661,6 +619,14 @@ function togglePassword() {
     }
 }
 
+// Beim Neuladen prüfen, ob Passwort bereits eingegeben wurde
+window.addEventListener('load', function() {
+    if (localStorage.getItem('weddingSiteUnlocked') === 'true') {
+        document.getElementById('gate').style.display = 'none';
+        document.getElementById('main').style.display = 'block';
+    }
+});
+
 // Enter-Taste zum Absenden
 document.addEventListener('DOMContentLoaded', function() {
     const pwInput = document.getElementById('pw');
@@ -668,6 +634,13 @@ document.addEventListener('DOMContentLoaded', function() {
         pwInput.addEventListener('keypress', function(e) {
             if (e.key === 'Enter') openSite();
         });
+    }
+});
+
+// Links in neuem Tab öffnen und Seite nicht neuladen
+document.addEventListener('click', function(e) {
+    if (e.target.tagName === 'A' && e.target.getAttribute('target') === '_blank') {
+        e.target.click();
     }
 });
 </script>
