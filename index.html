@@ -156,7 +156,7 @@ header.hero {
     background-position: center;
     background-attachment: scroll;
     width: 100vw;
-    height: 100vh;
+    height: 60vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -182,13 +182,14 @@ header h1, header p {
 }
 
 .title {
-    font-size: clamp(2em, 5vw, 4em);
-    font-weight: 600;
+    font-family: 'Tangerine', cursive;
+    font-size: 4em;
+    font-weight: 700;
     margin-bottom: 10px;
 }
 
 .sub {
-    font-size: clamp(1em, 2vw, 1.3em);
+    font-size: clamp(1.2em, 2.5vw, 1.6em);
 }
 
 /* TOC (Table of Contents) */
@@ -205,7 +206,7 @@ header h1, header p {
 .toc h2 {
     color: #4E684C;
     font-family: 'Tangerine', cursive;
-    font-size: clamp(2.5em, 6vw, 3.5em);
+    font-size: 2.5em;
     font-weight: 700;
     margin-bottom: 30px;
     border-bottom: 3px solid #6B8B69;
@@ -254,7 +255,7 @@ header h1, header p {
 .content h2 {
     color: #4E684C;
     font-family: 'Tangerine', cursive;
-    font-size: clamp(2.5em, 6vw, 3.5em);
+    font-size: 2.5em;
     font-weight: 700;
     margin-bottom: 30px;
     border-bottom: 3px solid #6B8B69;
@@ -387,8 +388,30 @@ header h1, header p {
     font-size: clamp(1em, 1.8vw, 1.1em);
 }
 
-/* Vollbild Bilder */
-.fullscreen-image {
+/* Hero Bild - klein auf PC, groß auf Handy */
+.hero-image {
+    width: 100vw;
+    height: 60vh;
+    object-fit: cover;
+    object-position: center;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+/* Church Bild - klein auf PC, groß auf Handy */
+.church-image {
+    width: 100vw;
+    height: 60vh;
+    object-fit: cover;
+    object-position: center;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+/* About Bild - groß überall, aber kleiner auf Handy */
+.about-image {
     width: 100vw;
     height: 100vh;
     object-fit: cover;
@@ -443,15 +466,30 @@ a:hover {
         padding: 30px;
     }
     header.hero {
-        height: 100vh;
+        height: 60vh;
         background-position: center;
         background-attachment: scroll;
     }
-    .fullscreen-image {
+    .hero-image {
+        height: 60vh;
+    }
+    .church-image {
+        height: 60vh;
+    }
+    .about-image {
         height: 100vh;
     }
     .toc-list {
         grid-template-columns: repeat(2, 1fr);
+    }
+    .title {
+        font-size: 4em;
+    }
+    .toc h2 {
+        font-size: 2.5em;
+    }
+    .content h2 {
+        font-size: 2.5em;
     }
 }
 
@@ -468,8 +506,17 @@ a:hover {
     }
 
     .title {
-        font-size: clamp(1.5em, 4vw, 2.5em);
+        font-size: 3.2em;
     }
+
+    .toc h2 {
+        font-size: 2.8em;
+    }
+
+    .content h2 {
+        font-size: 2.8em;
+    }
+
     .sub {
         font-size: clamp(0.9em, 1.5vw, 1.1em);
     }
@@ -487,16 +534,18 @@ a:hover {
         padding: 20px;
         border-radius: 5px;
     }
-    .content h2 {
-        font-size: 2em;
-        margin-bottom: 20px;
-    }
     .content p {
         font-size: 1em;
         text-align: left;
     }
-    .fullscreen-image {
+    .hero-image {
         height: 100vh;
+    }
+    .church-image {
+        height: 100vh;
+    }
+    .about-image {
+        height: 70vh;
     }
     header.hero {
         height: 100vh;
@@ -538,23 +587,34 @@ a:hover {
         margin: 20px auto;
         padding: 15px;
     }
-    .content h2 {
-        font-size: 1.8em;
-        margin-bottom: 15px;
-    }
     .content p {
         text-align: left;
     }
-    .fullscreen-image {
+    .hero-image {
         height: 100vh;
+    }
+    .church-image {
+        height: 100vh;
+    }
+    .about-image {
+        height: 60vh;
     }
     header.hero {
         height: 100vh;
         background-position: center;
         background-attachment: scroll;
     }
+
+    .title {
+        font-size: 2.8em;
+    }
+
     .toc h2 {
-        font-size: 2em;
+        font-size: 2.4em;
+    }
+
+    .content h2 {
+        font-size: 2.4em;
     }
 }
 
@@ -687,7 +747,7 @@ a:hover {
   </div>
 </section>
 
-<img src="church.jpg" alt="Kirche" class="fullscreen-image">
+<img src="church.jpg" alt="Kirche" class="church-image">
 
 <!-- DRESSCODE -->
 <section class="content" id="dresscode">
@@ -734,7 +794,7 @@ a:hover {
   </div>
 </section>
 
-<img src="about.jpg" alt="Über uns" class="fullscreen-image">
+<img src="about.jpg" alt="Über uns" class="about-image">
 
 <!-- KONTAKTE -->
 <section class="content" id="kontakte">
