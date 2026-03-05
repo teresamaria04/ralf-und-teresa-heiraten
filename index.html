@@ -17,6 +17,38 @@ body {
     color: #4E684C;
     background-color: #F5F8F5;
 }
+
+.language-switcher {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+    display: flex;
+    gap: 10px;
+}
+
+.lang-btn {
+    padding: 8px 15px;
+    background-color: #4E684C;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'Cormorant Garamond', serif;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+.lang-btn:hover {
+    background-color: #6B8B69;
+}
+
+.lang-btn.active {
+    background-color: #6B8B69;
+    border: 2px solid white;
+}
+
 .access {
     display: flex;
     flex-direction: column;
@@ -236,13 +268,13 @@ header h1, header p {
 .schedule {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    gap: 10px;
     margin-top: 20px;
 }
 
 .schedule p {
     background: linear-gradient(135deg, #F0F5F0 0%, #E8F0E8 100%);
-    padding: 20px;
+    padding: 15px;
     border-radius: 5px;
     text-align: center;
     border-left: 4px solid #4E684C;
@@ -282,6 +314,23 @@ header h1, header p {
     margin: 0;
     font-size: clamp(0.95em, 1.8vw, 1em);
     margin-bottom: 3px;
+}
+
+.address-link {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 8px 15px;
+    background-color: #4E684C;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: clamp(0.9em, 1.8vw, 1em);
+    transition: 0.3s;
+}
+
+.address-link:hover {
+    background-color: #6B8B69;
+    box-shadow: 0 4px 10px rgba(78, 104, 76, 0.3);
 }
 
 .story-section {
@@ -391,6 +440,16 @@ a:hover {
 
 /* Handy */
 @media (max-width: 768px) {
+    .language-switcher {
+        top: 10px;
+        right: 10px;
+    }
+
+    .lang-btn {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
     .title {
         font-size: clamp(1.5em, 4vw, 2.5em);
     }
@@ -476,18 +535,27 @@ a:hover {
         font-size: 1.6em;
     }
 }
+
+.hidden {
+    display: none !important;
+}
 </style>
 </head>
 <body>
 
+<div class="language-switcher">
+    <button class="lang-btn active" data-lang="de" onclick="switchLanguage('de')">Deutsch</button>
+    <button class="lang-btn" data-lang="en" onclick="switchLanguage('en')">English</button>
+</div>
+
 <div class="access" id="gate">
-  <h1>Willkommen</h1>
+  <h1 data-de="Willkommen" data-en="Welcome">Willkommen</h1>
   <div class="password-wrapper">
     <div class="password-container">
-      <input type="password" id="pw" placeholder="Zugangscode">
+      <input type="password" id="pw" placeholder="Zugangscode" data-de="Zugangscode" data-en="Access code">
     </div>
     <button class="toggle-password" onclick="togglePassword()" title="PIN anzeigen">👁️</button>
-    <button onclick="openSite()">Weiter</button>
+    <button onclick="openSite()" data-de="Weiter" data-en="Continue">Weiter</button>
   </div>
 </div>
 
@@ -501,82 +569,89 @@ a:hover {
 
 <!-- TABLE OF CONTENTS -->
 <section class="toc">
-  <h2>Übersicht</h2>
+  <h2 data-de="Übersicht" data-en="Overview">Übersicht</h2>
   <div class="toc-list">
-    <div class="toc-item"><a href="#zusage">✉️ Zur Zusage</a></div>
-    <div class="toc-item"><a href="#erinnerungen">📸 Erinnerungen</a></div>
-    <div class="toc-item"><a href="#ablauf">🕐 Ablauf</a></div>
-    <div class="toc-item"><a href="#adressen">📍 Adressen</a></div>
-    <div class="toc-item"><a href="#dresscode">👗 Dresscode</a></div>
-    <div class="toc-item"><a href="#kuchen">🍰 Kuchenbuffet</a></div>
-    <div class="toc-item"><a href="#geschenke">🎁 Geschenke</a></div>
-    <div class="toc-item"><a href="#geschichte">🤍 Unsere Geschichte</a></div>
-    <div class="toc-item"><a href="#kontakte">☎️ Kontakte</a></div>
+    <div class="toc-item"><a href="#zusage"><span data-de="✉️ Zur Zusage" data-en="✉️ RSVP">✉️ Zur Zusage</span></a></div>
+    <div class="toc-item"><a href="#erinnerungen"><span data-de="📸 Erinnerungen" data-en="📸 Memories">📸 Erinnerungen</span></a></div>
+    <div class="toc-item"><a href="#ablauf"><span data-de="🕐 Ablauf" data-en="🕐 Schedule">🕐 Ablauf</span></a></div>
+    <div class="toc-item"><a href="#adressen"><span data-de="📍 Adressen" data-en="📍 Addresses">📍 Adressen</span></a></div>
+    <div class="toc-item"><a href="#dresscode"><span data-de="👗 Dresscode" data-en="👗 Dress Code">👗 Dresscode</span></a></div>
+    <div class="toc-item"><a href="#kuchen"><span data-de="🍰 Kuchenbuffet" data-en="🍰 Cake Buffet">🍰 Kuchenbuffet</span></a></div>
+    <div class="toc-item"><a href="#geschenke"><span data-de="🎁 Geschenke" data-en="🎁 Gifts">🎁 Geschenke</span></a></div>
+    <div class="toc-item"><a href="#geschichte"><span data-de="🤍 Unsere Geschichte" data-en="🤍 Our Story">🤍 Unsere Geschichte</span></a></div>
+    <div class="toc-item"><a href="#kontakte"><span data-de="☎️ Kontakte" data-en="☎️ Contact">☎️ Kontakte</span></a></div>
   </div>
 </section>
 
 <!-- ZUR ZUSAGE -->
 <section class="content" id="zusage">
-  <a href="https://1drv.ms/x/c/69f6cbaf37066ebb/IQAjqLdmacT9QqiC2yMejxdgAdA57zvE45gLHKE_SAXtLoE?e=LYIO1f" class="nav-link" target="_blank">📝 Zur Zusage</a>
+  <p data-de="Wir bitten um Rückmeldung bis zum 10. August 2026 in form einer Nachricht, oder durch Selbsteintragung in die Liste - bitte in alphabetischer Reihenfolge nach den Nachnamen." data-en="We request your response by August 10, 2026 via message or by self-registration in the list - please in alphabetical order by last name.">Wir bitten um Rückmeldung bis zum 10. August 2026 in form einer Nachricht, oder durch Selbsteintragung in die Liste - bitte in alphabetischer Reihenfolge nach den Nachnamen.</p>
+  <a href="https://1drv.ms/x/c/69f6cbaf37066ebb/IQAjqLdmacT9QqiC2yMejxdgAdA57zvE45gLHKE_SAXtLoE?e=LYIO1f" class="nav-link" target="_blank" data-de="📝 Zur Zusage" data-en="📝 RSVP">📝 Zur Zusage</a>
 </section>
 
 <!-- ERINNERUNGEN -->
 <section class="content" id="erinnerungen">
-  <h2>Erinnerungen</h2>
-  <p>Fotos und Videos von unserem besonderen Tag:<br>
-  <a href="https://photos.app.goo.gl/9JvJRk1kwqA1CmAXA" target="_blank">Link zu den Fotos</a></p>
+  <h2 data-de="Erinnerungen" data-en="Memories">Erinnerungen</h2>
+  <p data-de="Fotos und Videos von unserem besonderen Tag:" data-en="Photos and videos from our special day:">Fotos und Videos von unserem besonderen Tag:<br>
+  <a href="https://photos.app.goo.gl/9JvJRk1kwqA1CmAXA" target="_blank" data-de="Link zu den Fotos" data-en="Link to photos">Link zu den Fotos</a></p>
 </section>
 
 <!-- ABLAUF -->
 <section class="content" id="ablauf">
-  <h2>Ablauf</h2>
+  <h2 data-de="Ablauf" data-en="Schedule">Ablauf</h2>
   <div class="schedule">
-    <p><span class="time">12:15 Uhr</span><span class="schedule-text">Eintrudeln</span></p>
-    <p><span class="time">12:30 Uhr</span><span class="schedule-text">Trauung</span></p>
-    <p><span class="time">14:30 – 17:30 Uhr</span><span class="schedule-text">Sektempfang</span></p>
-    <p><span class="time">17:30 Uhr</span><span class="schedule-text">Ortswechsel</span></p>
-    <p><span class="time">18:00 Uhr</span><span class="schedule-text">Einlass Kamper Hof</span></p>
-    <p><span class="time">18:30 Uhr</span><span class="schedule-text">Abendessen mit Programm</span></p>
-    <p><span class="time">21:30 Uhr</span><span class="schedule-text">Eröffnungstanz</span></p>
-    <p><span class="time">22:00 Uhr</span><span class="schedule-text">Hochzeitstorte</span></p>
-    <p><span class="time">24:00 Uhr</span><span class="schedule-text">Mitternachtssnack</span></p>
+    <p><span class="time">12:15 Uhr</span><span class="schedule-text" data-de="Eintrudeln" data-en="Arrival">Eintrudeln</span></p>
+    <p><span class="time">12:30 Uhr</span><span class="schedule-text" data-de="Trauung" data-en="Ceremony">Trauung</span></p>
+    <p><span class="time">14:30 – 17:30 Uhr</span><span class="schedule-text" data-de="Sektempfang" data-en="Reception">Sektempfang</span></p>
+    <p><span class="time">17:30 Uhr</span><span class="schedule-text" data-de="Ortswechsel" data-en="Venue change">Ortswechsel</span></p>
+    <p><span class="time">18:00 Uhr</span><span class="schedule-text" data-de="Einlass Kamper Hof" data-en="Entrance Kamper Hof">Einlass Kamper Hof</span></p>
+    <p><span class="time">18:30 Uhr</span><span class="schedule-text" data-de="Abendessen mit Programm" data-en="Dinner with entertainment">Abendessen mit Programm</span></p>
+    <p><span class="time">21:30 Uhr</span><span class="schedule-text" data-de="Eröffnungstanz" data-en="First dance">Eröffnungstanz</span></p>
+    <p><span class="time">22:00 Uhr</span><span class="schedule-text" data-de="Hochzeitstorte" data-en="Wedding cake">Hochzeitstorte</span></p>
+    <p><span class="time">24:00 Uhr</span><span class="schedule-text" data-de="Mitternachtssnack" data-en="Midnight snack">Mitternachtssnack</span></p>
   </div>
 </section>
 
 <!-- ADRESSEN -->
 <section class="content" id="adressen">
-  <h2>Adressen</h2>
+  <h2 data-de="Adressen" data-en="Addresses">Adressen</h2>
   <div class="address-block">
-    <strong>Trauung:</strong>
+    <strong data-de="Trauung:" data-en="Ceremony:">Trauung:</strong>
     <p>Basilika in Kevelaer</p>
     <p>Kapellenpl. 35, 47623 Kevelaer</p>
+    <a href="https://maps.google.com/?q=Kapellenpl+35,+47623+Kevelaer" target="_blank" class="address-link" data-de="Route anzeigen" data-en="Show directions">Route anzeigen</a>
   </div>
   <div class="address-block">
-    <strong>Sektempfang:</strong>
+    <strong data-de="Sektempfang:" data-en="Reception:">Sektempfang:</strong>
     <p>Josef–Schotten–Schützenhalle</p>
     <p>Twistedener Str. 285, 47623 Kevelaer</p>
+    <a href="https://maps.google.com/?q=Twistedener+Str+285,+47623+Kevelaer" target="_blank" class="address-link" data-de="Route anzeigen" data-en="Show directions">Route anzeigen</a>
   </div>
   <div class="address-block">
-    <strong>Feier:</strong>
+    <strong data-de="Feier:" data-en="Celebration:">Feier:</strong>
     <p>Kamper Hof</p>
     <p>Kamper Str. 8, 47495 Rheinberg</p>
+    <a href="https://maps.google.com/?q=Kamper+Str+8,+47495+Rheinberg" target="_blank" class="address-link" data-de="Route anzeigen" data-en="Show directions">Route anzeigen</a>
   </div>
   <div class="address-block">
-    <strong>Parkmöglichkeiten - Trauung:</strong>
+    <strong data-de="Parkmöglichkeiten - Trauung:" data-en="Parking - Ceremony:">Parkmöglichkeiten - Trauung:</strong>
     <p>Basilikastraße 2, 47623 Kevelaer</p>
     <p>Am bhf 55, 47623 Kevelaer</p>
+    <a href="https://maps.google.com/?q=Basilikastraße+2,+47623+Kevelaer" target="_blank" class="address-link" data-de="Route anzeigen" data-en="Show directions">Route anzeigen</a>
   </div>
   <div class="address-block">
-    <strong>Parkmöglichkeit - Feier:</strong>
+    <strong data-de="Parkmöglichkeit - Feier:" data-en="Parking - Celebration:">Parkmöglichkeit - Feier:</strong>
     <p>Parkplatz am Kräuterturm</p>
     <p>Kamperstraße 21</p>
-    <p>(kostenlose Entwertung in der Location)</p>
+    <p data-de="(kostenlose Entwertung in der Location)" data-en="(free validation at the location)">(kostenlose Entwertung in der Location)</p>
+    <a href="https://maps.google.com/?q=Kamperstraße+21,+47495+Rheinberg" target="_blank" class="address-link" data-de="Route anzeigen" data-en="Show directions">Route anzeigen</a>
   </div>
   <div class="address-block">
-    <strong>Übernachtungsmöglichkeit:</strong>
+    <strong data-de="Übernachtungsmöglichkeit:" data-en="Accommodation:">Übernachtungsmöglichkeit:</strong>
     <p>Hotel Am Fischmarkt</p>
     <p>Fischmarkt 2–5, 47495 Rheinberg</p>
-    <p>Stichwort: Gunderloch</p>
+    <p data-de="Stichwort: Gunderloch" data-en="Keyword: Gunderloch">Stichwort: Gunderloch</p>
+    <a href="https://maps.google.com/?q=Hotel+Am+Fischmarkt,+Fischmarkt+2-5,+47495+Rheinberg" target="_blank" class="address-link" data-de="Route anzeigen" data-en="Show directions">Route anzeigen</a>
   </div>
 </section>
 
@@ -584,33 +659,33 @@ a:hover {
 
 <!-- DRESSCODE -->
 <section class="content" id="dresscode">
-  <h2>Dresscode</h2>
+  <h2 data-de="Dresscode" data-en="Dress Code">Dresscode</h2>
   <div class="dresscode-item">
-    <strong>Damen:</strong>
-    <p>Cocktail– oder Abendkleid<br>Farben wie weiß oder beige sind nicht erwünscht.</p>
+    <strong data-de="Damen:" data-en="Ladies:">Damen:</strong>
+    <p data-de="Cocktail– oder Abendkleid Farben wie weiß oder beige sind nicht erwünscht." data-en="Cocktail or evening dress. Colors such as white or beige are not desired.">Cocktail– oder Abendkleid<br>Farben wie weiß oder beige sind nicht erwünscht.</p>
   </div>
   <div class="dresscode-item">
-    <strong>Herren:</strong>
-    <p>Anzug</p>
+    <strong data-de="Herren:" data-en="Gentlemen:">Herren:</strong>
+    <p data-de="Anzug" data-en="Suit">Anzug</p>
   </div>
 </section>
 
 <!-- KUCHENBUFFET -->
 <section class="content" id="kuchen">
-  <h2>Kuchenbuffet</h2>
-  <p>Über eine Spende zu unserem Kuchenbuffet - mit Rücksprache oder Kontrolle in der Liste - würden wir uns sehr freuen!</p>
-  <p><a href="https://1drv.ms/x/c/69f6cbaf37066ebb/IQB1VSvJ7wxXTqVonJheuQeWAaEjhPQ_fPi9EMYOWhQoZ4o?e=aPpIUH" target="_blank">Link zum Kuchenbuffet</a></p>
+  <h2 data-de="Kuchenbuffet" data-en="Cake Buffet">Kuchenbuffet</h2>
+  <p data-de="Über eine Spende zu unserem Kuchenbuffet - mit Rücksprache oder Kontrolle in der Liste - würden wir uns sehr freuen!" data-en="We would be very grateful for a donation to our cake buffet - by arrangement or registration on the list!">Über eine Spende zu unserem Kuchenbuffet - mit Rücksprache oder Kontrolle in der Liste - würden wir uns sehr freuen!</p>
+  <p><a href="https://1drv.ms/x/c/69f6cbaf37066ebb/IQB1VSvJ7wxXTqVonJheuQeWAaEjhPQ_fPi9EMYOWhQoZ4o?e=aPpIUH" target="_blank" data-de="Link zum Kuchenbuffet" data-en="Link to cake buffet">Link zum Kuchenbuffet</a></p>
 </section>
 
 <!-- GESCHENKE -->
 <section class="content" id="geschenke">
-  <h2>Geschenke</h2>
-  <p>Eure Anwesenheit an unserem Hochzeitstag ist für uns das größte Geschenk. Wenn ihr uns darüber hinaus eine Freude machen möchtet, danken wir euch herzlich für einen <strong>finanziellen Beitrag</strong> zu unserer gemeinsamen Zukunft.</p>
+  <h2 data-de="Geschenke" data-en="Gifts">Geschenke</h2>
+  <p data-de="Eure Anwesenheit an unserem Hochzeitstag ist für uns das größte Geschenk. Wenn ihr uns darüber hinaus eine Freude machen möchtet, danken wir euch herzlich für einen finanziellen Beitrag zu unserer gemeinsamen Zukunft." data-en="Your presence on our wedding day is the greatest gift for us. If you would like to give us additional joy, we would be grateful for a financial contribution to our future together.">Eure Anwesenheit an unserem Hochzeitstag ist für uns das größte Geschenk. Wenn ihr uns darüber hinaus eine Freude machen möchtet, danken wir euch herzlich für einen <strong>finanziellen Beitrag</strong> zu unserer gemeinsamen Zukunft.</p>
 </section>
 
 <!-- UNSERE GESCHICHTE -->
 <section class="content" id="geschichte">
-  <h2>Unsere Geschichte</h2>
+  <h2 data-de="Unsere Geschichte" data-en="Our Story">Unsere Geschichte</h2>
   
   <div class="story-section">
     <p>In einem Loch im Boden, da lebte ein Ralf. In einem feuchten, schmutzigen Loch, wo es nach Moder riecht und Wurmzipfel von den Wänden herabhängen. Neee Spaaaß :D</p>
@@ -629,20 +704,43 @@ a:hover {
 
 <!-- KONTAKTE -->
 <section class="content" id="kontakte">
-  <h2>Kontakte</h2>
-  <p><strong>TERESA MARIA FÄRBER</strong><br>
+  <h2 data-de="Kontakte" data-en="Contact">Kontakte</h2>
+  <p><strong data-de="TERESA MARIA FÄRBER" data-en="TERESA MARIA FÄRBER">TERESA MARIA FÄRBER</strong><br>
   <span class="contact-number">+49 1575 5998493</span></p>
-  <p><strong>RALF GUNDERLOCH</strong><br>
+  <p><strong data-de="RALF GUNDERLOCH" data-en="RALF GUNDERLOCH">RALF GUNDERLOCH</strong><br>
   <span class="contact-number">+49 1573 5316143</span></p>
 </section>
 
 <footer>
-  <p>Wir freuen uns auf Euch!</p>
+  <p data-de="Wir freuen uns auf Euch!" data-en="We look forward to seeing you!">Wir freuen uns auf Euch!</p>
 </footer>
 
 </div>
 
 <script>
+let currentLanguage = 'de';
+
+function switchLanguage(lang) {
+    currentLanguage = lang;
+    
+    // Update active button
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    document.querySelector(`[data-lang="${lang}"]`).classList.add('active');
+    
+    // Update all text
+    document.querySelectorAll('[data-de][data-en]').forEach(element => {
+        element.textContent = element.getAttribute(`data-${lang}`);
+    });
+    
+    // Update placeholder
+    const pwInput = document.getElementById('pw');
+    if (pwInput) {
+        pwInput.placeholder = pwInput.getAttribute(`data-${lang}`);
+    }
+}
+
 // Passwort NICHT speichern - immer fragen!
 function openSite() {
     const pw = document.getElementById('pw').value;
@@ -651,7 +749,7 @@ function openSite() {
         document.getElementById('main').style.display = 'block';
         window.scrollTo(0, 0);
     } else {
-        alert('Falsches Passwort!');
+        alert(currentLanguage === 'de' ? 'Falsches Passwort!' : 'Wrong password!');
         document.getElementById('pw').value = '';
     }
 }
