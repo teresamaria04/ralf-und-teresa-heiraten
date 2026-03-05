@@ -308,6 +308,19 @@ header h1, header p {
     margin-bottom: 25px;
 }
 
+.address-block a {
+    display: block;
+    color: #4E684C;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.address-block a:hover {
+    color: #6B8B69;
+    text-decoration: underline;
+}
+
 .address-block strong {
     color: #4E684C;
     font-size: clamp(1em, 2vw, 1.1em);
@@ -374,26 +387,15 @@ header h1, header p {
     font-size: clamp(1em, 1.8vw, 1.1em);
 }
 
-.divider {
-    width: 100%;
-    height: clamp(50vh, 100vh, 100vh);
+/* Vollbild Bilder */
+.fullscreen-image {
+    width: 100vw;
+    height: 100vh;
     object-fit: cover;
     object-position: center;
     margin: 0;
     padding: 0;
     display: block;
-    max-width: 100%;
-}
-
-.parallax-image {
-    width: 100%;
-    height: clamp(50vh, 100vh, 100vh);
-    background-size: cover;
-    background-position: center;
-    background-attachment: scroll;
-    margin: 0;
-    padding: 0;
-    max-width: 100%;
 }
 
 footer {
@@ -441,12 +443,12 @@ a:hover {
         padding: 30px;
     }
     header.hero {
-        height: 80vh;
+        height: 100vh;
         background-position: center;
         background-attachment: scroll;
     }
-    .divider {
-        height: 80vh;
+    .fullscreen-image {
+        height: 100vh;
     }
     .toc-list {
         grid-template-columns: repeat(2, 1fr);
@@ -493,12 +495,11 @@ a:hover {
         font-size: 1em;
         text-align: left;
     }
-    .divider {
-        height: 70vh;
-        min-height: 400px;
+    .fullscreen-image {
+        height: 100vh;
     }
     header.hero {
-        height: 70vh;
+        height: 100vh;
         background-position: center;
         background-attachment: scroll;
     }
@@ -544,12 +545,11 @@ a:hover {
     .content p {
         text-align: left;
     }
-    .divider {
-        height: 60vh;
-        min-height: 250px;
+    .fullscreen-image {
+        height: 100vh;
     }
     header.hero {
-        height: 60vh;
+        height: 100vh;
         background-position: center;
         background-attachment: scroll;
     }
@@ -618,7 +618,7 @@ a:hover {
   <h2 data-de="Erinnerungen" data-en="Memories">Erinnerungen</h2>
   <p data-de="Fotos und Videos von unserem besonderen Tag:" data-en="Photos and videos from our special day:">Fotos und Videos von unserem besonderen Tag:</p>
   <div class="button-group">
-    <a href="https://photos.app.goo.gl/9JvJRk1kwqA1CmAXA" class="btn" target="_blank" data-de="📸 Link zu den Fotos" data-en="📸 Link to photos">📸 Link zu den Fotos</a>
+    <a href="https://photos.app.goo.gl/9JvJRk1kwqA1CmAXA" class="btn" target="_blank" data-de="📸 Zur Galerie" data-en="📸 To gallery">📸 Zur Galerie</a>
   </div>
 </section>
 
@@ -643,57 +643,51 @@ a:hover {
   <h2 data-de="Adressen" data-en="Addresses">Adressen</h2>
   <div class="address-block">
     <strong data-de="Trauung:" data-en="Ceremony:">Trauung:</strong>
-    <p>Basilika in Kevelaer</p>
-    <p>Kapellenpl. 35, 47623 Kevelaer</p>
-    <div class="button-group">
-      <a href="https://maps.google.com/?q=Kapellenpl+35,+47623+Kevelaer" target="_blank" class="btn" data-de="🗺️ Route anzeigen" data-en="🗺️ Show directions">🗺️ Route anzeigen</a>
-    </div>
+    <a href="https://maps.google.com/?q=Kapellenpl+35,+47623+Kevelaer" target="_blank">
+      <p>Basilika in Kevelaer</p>
+      <p>Kapellenpl. 35, 47623 Kevelaer</p>
+    </a>
   </div>
   <div class="address-block">
     <strong data-de="Sektempfang:" data-en="Reception:">Sektempfang:</strong>
-    <p>Josef–Schotten–Schützenhalle</p>
-    <p>Twistedener Str. 285, 47623 Kevelaer</p>
-    <div class="button-group">
-      <a href="https://maps.google.com/?q=Twistedener+Str+285,+47623+Kevelaer" target="_blank" class="btn" data-de="🗺️ Route anzeigen" data-en="🗺️ Show directions">🗺️ Route anzeigen</a>
-    </div>
+    <a href="https://maps.google.com/?q=Twistedener+Str+285,+47623+Kevelaer" target="_blank">
+      <p>Josef–Schotten–Schützenhalle</p>
+      <p>Twistedener Str. 285, 47623 Kevelaer</p>
+    </a>
   </div>
   <div class="address-block">
     <strong data-de="Feier:" data-en="Celebration:">Feier:</strong>
-    <p>Kamper Hof</p>
-    <p>Kamper Str. 8, 47495 Rheinberg</p>
-    <div class="button-group">
-      <a href="https://maps.google.com/?q=Kamper+Str+8,+47495+Rheinberg" target="_blank" class="btn" data-de="🗺️ Route anzeigen" data-en="🗺️ Show directions">🗺️ Route anzeigen</a>
-    </div>
+    <a href="https://maps.google.com/?q=Kamper+Str+8,+47495+Rheinberg" target="_blank">
+      <p>Kamper Hof</p>
+      <p>Kamper Str. 8, 47495 Rheinberg</p>
+    </a>
   </div>
   <div class="address-block">
     <strong data-de="Parkmöglichkeiten - Trauung:" data-en="Parking - Ceremony:">Parkmöglichkeiten - Trauung:</strong>
-    <p>Basilikastraße 2, 47623 Kevelaer</p>
-    <p>Am bhf 55, 47623 Kevelaer</p>
-    <div class="button-group">
-      <a href="https://maps.google.com/?q=Basilikastraße+2,+47623+Kevelaer" target="_blank" class="btn" data-de="🗺️ Route anzeigen" data-en="🗺️ Show directions">🗺️ Route anzeigen</a>
-    </div>
+    <a href="https://maps.google.com/?q=Basilikastraße+2,+47623+Kevelaer" target="_blank">
+      <p>Basilikastraße 2, 47623 Kevelaer</p>
+      <p>Am bhf 55, 47623 Kevelaer</p>
+    </a>
   </div>
   <div class="address-block">
     <strong data-de="Parkmöglichkeit - Feier:" data-en="Parking - Celebration:">Parkmöglichkeit - Feier:</strong>
-    <p>Parkplatz am Kräuterturm</p>
-    <p>Kamperstraße 21</p>
+    <a href="https://maps.google.com/?q=Kamperstraße+21,+47495+Rheinberg" target="_blank">
+      <p>Parkplatz am Kräuterturm</p>
+      <p>Kamperstraße 21</p>
+    </a>
     <p data-de="(kostenlose Entwertung in der Location)" data-en="(free validation at the location)">(kostenlose Entwertung in der Location)</p>
-    <div class="button-group">
-      <a href="https://maps.google.com/?q=Kamperstraße+21,+47495+Rheinberg" target="_blank" class="btn" data-de="🗺️ Route anzeigen" data-en="🗺️ Show directions">🗺️ Route anzeigen</a>
-    </div>
   </div>
   <div class="address-block">
     <strong data-de="Übernachtungsmöglichkeit:" data-en="Accommodation:">Übernachtungsmöglichkeit:</strong>
-    <p>Hotel Am Fischmarkt</p>
-    <p>Fischmarkt 2–5, 47495 Rheinberg</p>
-    <p data-de="Stichwort: Gunderloch" data-en="Keyword: Gunderloch">Stichwort: Gunderloch</p>
-    <div class="button-group">
-      <a href="https://maps.google.com/?q=Hotel+Am+Fischmarkt,+Fischmarkt+2-5,+47495+Rheinberg" target="_blank" class="btn" data-de="🗺️ Route anzeigen" data-en="🗺️ Show directions">🗺️ Route anzeigen</a>
-    </div>
+    <a href="https://maps.google.com/?q=Hotel+Am+Fischmarkt,+Fischmarkt+2-5,+47495+Rheinberg" target="_blank">
+      <p>Hotel Am Fischmarkt</p>
+      <p>Fischmarkt 2–5, 47495 Rheinberg</p>
+      <p data-de="Stichwort: Gunderloch" data-en="Keyword: Gunderloch">Stichwort: Gunderloch</p>
+    </a>
   </div>
 </section>
 
-<img src="church.jpg" alt="Kirche" class="divider">
+<img src="church.jpg" alt="Kirche" class="fullscreen-image">
 
 <!-- DRESSCODE -->
 <section class="content" id="dresscode">
@@ -713,7 +707,7 @@ a:hover {
   <h2 data-de="Kuchenbuffet" data-en="Cake Buffet">Kuchenbuffet</h2>
   <p data-de="Über eine Spende zu unserem Kuchenbuffet - mit Rücksprache oder Kontrolle in der Liste - würden wir uns sehr freuen!" data-en="We would be very grateful for a donation to our cake buffet - by arrangement or registration on the list!">Über eine Spende zu unserem Kuchenbuffet - mit Rücksprache oder Kontrolle in der Liste - würden wir uns sehr freuen!</p>
   <div class="button-group">
-    <a href="https://1drv.ms/x/c/69f6cbaf37066ebb/IQB1VSvJ7wxXTqVonJheuQeWAaEjhPQ_fPi9EMYOWhQoZ4o?e=aPpIUH" class="btn" target="_blank" data-de="🍰 Link zum Kuchenbuffet" data-en="🍰 Link to cake buffet">🍰 Link zum Kuchenbuffet</a>
+    <a href="https://1drv.ms/x/c/69f6cbaf37066ebb/IQB1VSvJ7wxXTqVonJheuQeWAaEjhPQ_fPi9EMYOWhQoZ4o?e=aPpIUH" class="btn" target="_blank" data-de="🍰 Zur Kuchenliste" data-en="🍰 To cake list">🍰 Zur Kuchenliste</a>
   </div>
 </section>
 
@@ -740,7 +734,7 @@ a:hover {
   </div>
 </section>
 
-<img src="about.jpg" alt="Über uns" class="divider">
+<img src="about.jpg" alt="Über uns" class="fullscreen-image">
 
 <!-- KONTAKTE -->
 <section class="content" id="kontakte">
