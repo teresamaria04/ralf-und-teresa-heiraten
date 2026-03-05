@@ -184,7 +184,7 @@ header h1, header p {
 .title {
     font-family: 'Times New Roman', Times, serif;
     font-size: 3.5em;
-    font-weight: 700;
+    font-weight: 400;
     margin-bottom: 5px;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -312,30 +312,31 @@ header h1, header p {
     margin-bottom: 25px;
 }
 
-.address-block a {
-    display: block;
-    color: #4E684C;
-    text-decoration: none;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.address-block a:hover {
-    color: #6B8B69;
-    text-decoration: underline;
-}
-
 .address-block strong {
     color: #4E684C;
-    font-size: clamp(1em, 2vw, 1.1em);
+    font-size: clamp(1.1em, 2.2vw, 1.25em);
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    font-weight: 600;
 }
 
 .address-block p {
     margin: 0;
     font-size: clamp(0.95em, 1.8vw, 1em);
-    margin-bottom: 3px;
+    margin-bottom: 8px;
+}
+
+.address-block a {
+    color: #4E684C;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.address-block a:hover {
+    color: #6B8B69;
+    text-decoration: underline;
 }
 
 .button-group {
@@ -348,9 +349,10 @@ header h1, header p {
 .btn {
     display: inline-block;
     padding: 10px 18px;
-    background-color: #8DAD8B;
-    color: white;
+    background: linear-gradient(135deg, #F0F5F0 0%, #E8F0E8 100%);
+    color: #4E684C;
     border: none;
+    border-left: 4px solid #4E684C;
     border-radius: 5px;
     text-decoration: none;
     font-size: clamp(0.9em, 1.8vw, 1em);
@@ -361,7 +363,7 @@ header h1, header p {
 }
 
 .btn:hover {
-    background-color: #9ABB98;
+    background: linear-gradient(135deg, #E8F0E8 0%, #E0E8E0 100%);
     box-shadow: 0 4px 10px rgba(78, 104, 76, 0.2);
 }
 
@@ -449,8 +451,9 @@ a:hover {
     display: inline-block;
     margin: 10px 20px;
     padding: clamp(8px, 1.5vw, 10px) clamp(15px, 3vw, 20px);
-    background-color: #8DAD8B;
-    color: white;
+    background: linear-gradient(135deg, #F0F5F0 0%, #E8F0E8 100%);
+    color: #4E684C;
+    border-left: 4px solid #4E684C;
     border-radius: 5px;
     text-decoration: none;
     transition: 0.3s;
@@ -458,7 +461,7 @@ a:hover {
 }
 
 .nav-link:hover {
-    background-color: #9ABB98;
+    background: linear-gradient(135deg, #E8F0E8 0%, #E0E8E0 100%);
     box-shadow: 0 4px 10px rgba(78, 104, 76, 0.3);
 }
 
@@ -656,7 +659,7 @@ a:hover {
 <section class="toc">
   <h2 data-de="Übersicht" data-en="Overview">Übersicht</h2>
   <div class="toc-list">
-    <div class="toc-item"><a href="#zusage"><span data-de="✉️ Zur Zusage" data-en="✉️ RSVP">✉️ Zur Zusage</span></a></div>
+    <div class="toc-item"><a href="#rückmeldung"><span data-de="✉️ Rückmeldung" data-en="✉️ Response">✉️ Rückmeldung</span></a></div>
     <div class="toc-item"><a href="#erinnerungen"><span data-de="📸 Erinnerungen" data-en="📸 Memories">📸 Erinnerungen</span></a></div>
     <div class="toc-item"><a href="#ablauf"><span data-de="🕐 Ablauf" data-en="🕐 Schedule">🕐 Ablauf</span></a></div>
     <div class="toc-item"><a href="#adressen"><span data-de="📍 Adressen" data-en="📍 Addresses">📍 Adressen</span></a></div>
@@ -668,11 +671,12 @@ a:hover {
   </div>
 </section>
 
-<!-- ZUR ZUSAGE -->
-<section class="content" id="zusage">
+<!-- ZUR RÜCKMELDUNG -->
+<section class="content" id="rückmeldung">
+  <h2 data-de="Rückmeldung" data-en="Response">Rückmeldung</h2>
   <p data-de="Wir bitten um Rückmeldung bis zum 10. August 2026 in Form einer Nachricht, oder durch Selbsteintragung in die Liste - bitte in alphabetischer Reihenfolge nach den Nachnamen." data-en="We request your response by August 10, 2026 via message or by self-registration in the list - please in alphabetical order by last name.">Wir bitten um Rückmeldung bis zum 10. August 2026 in Form einer Nachricht, oder durch Selbsteintragung in die Liste - bitte in alphabetischer Reihenfolge nach den Nachnamen.</p>
   <div class="button-group">
-    <a href="https://1drv.ms/x/c/69f6cbaf37066ebb/IQAjqLdmacT9QqiC2yMejxdgAdA57zvE45gLHKE_SAXtLoE?e=LYIO1f" class="btn" target="_blank" data-de="📝 Zur Zusage" data-en="📝 RSVP">📝 Zur Zusage</a>
+    <a href="https://1drv.ms/x/c/69f6cbaf37066ebb/IQAjqLdmacT9QqiC2yMejxdgAdA57zvE45gLHKE_SAXtLoE?e=LYIO1f" class="btn" target="_blank" data-de="📝 Rückmeldung" data-en="📝 Response">📝 Rückmeldung</a>
   </div>
 </section>
 
@@ -706,47 +710,34 @@ a:hover {
   <h2 data-de="Adressen" data-en="Addresses">Adressen</h2>
   <div class="address-block">
     <strong data-de="Trauung:" data-en="Ceremony:">Trauung:</strong>
-    <a href="https://maps.google.com/?q=Kapellenpl+35,+47623+Kevelaer" target="_blank">
-      <p>Basilika in Kevelaer</p>
-      <p>Kapellenpl. 35, 47623 Kevelaer</p>
-    </a>
+    <p>Basilika in Kevelaer</p>
+    <a href="https://maps.google.com/?q=Kapellenpl+35,+47623+Kevelaer" target="_blank">Kapellenpl. 35, 47623 Kevelaer</a>
   </div>
   <div class="address-block">
     <strong data-de="Sektempfang:" data-en="Reception:">Sektempfang:</strong>
-    <a href="https://maps.google.com/?q=Twistedener+Str+285,+47623+Kevelaer" target="_blank">
-      <p>Josef–Schotten–Schützenhalle</p>
-      <p>Twistedener Str. 285, 47623 Kevelaer</p>
-    </a>
+    <p>Josef–Schotten–Schützenhalle</p>
+    <a href="https://maps.google.com/?q=Twistedener+Str+285,+47623+Kevelaer" target="_blank">Twistedener Str. 285, 47623 Kevelaer</a>
   </div>
   <div class="address-block">
     <strong data-de="Feier:" data-en="Celebration:">Feier:</strong>
-    <a href="https://maps.google.com/?q=Kamper+Str+8,+47495+Rheinberg" target="_blank">
-      <p>Kamper Hof</p>
-      <p>Kamper Str. 8, 47495 Rheinberg</p>
-    </a>
+    <p>Kamper Hof</p>
+    <a href="https://maps.google.com/?q=Kamper+Str+8,+47495+Rheinberg" target="_blank">Kamper Str. 8, 47495 Rheinberg</a>
   </div>
   <div class="address-block">
     <strong data-de="Parkmöglichkeiten - Trauung:" data-en="Parking - Ceremony:">Parkmöglichkeiten - Trauung:</strong>
-    <a href="https://maps.google.com/?q=Basilikastraße+2,+47623+Kevelaer" target="_blank">
-      <p>Basilikastraße 2, 47623 Kevelaer</p>
-      <p>Am bhf 55, 47623 Kevelaer</p>
-    </a>
+    <a href="https://maps.google.com/?q=Basilikastraße+2,+47623+Kevelaer" target="_blank">Basilikastraße 2, 47623 Kevelaer</a>
+    <a href="https://maps.google.com/?q=Am+bhf+55,+47623+Kevelaer" target="_blank">Am bhf 55, 47623 Kevelaer</a>
   </div>
   <div class="address-block">
     <strong data-de="Parkmöglichkeit - Feier:" data-en="Parking - Celebration:">Parkmöglichkeit - Feier:</strong>
-    <a href="https://maps.google.com/?q=Kamperstraße+21,+47495+Rheinberg" target="_blank">
-      <p>Parkplatz am Kräuterturm</p>
-      <p>Kamperstraße 21</p>
-    </a>
+    <a href="https://maps.google.com/?q=Kamperstraße+21,+47495+Rheinberg" target="_blank">Kamperstraße 21, 47495 Rheinberg</a>
     <p data-de="(kostenlose Entwertung in der Location)" data-en="(free validation at the location)">(kostenlose Entwertung in der Location)</p>
   </div>
   <div class="address-block">
     <strong data-de="Übernachtungsmöglichkeit:" data-en="Accommodation:">Übernachtungsmöglichkeit:</strong>
-    <a href="https://maps.google.com/?q=Hotel+Am+Fischmarkt,+Fischmarkt+2-5,+47495+Rheinberg" target="_blank">
-      <p>Hotel Am Fischmarkt</p>
-      <p>Fischmarkt 2–5, 47495 Rheinberg</p>
-      <p data-de="Stichwort: Gunderloch" data-en="Keyword: Gunderloch">Stichwort: Gunderloch</p>
-    </a>
+    <p>Hotel Am Fischmarkt</p>
+    <a href="https://maps.google.com/?q=Hotel+Am+Fischmarkt,+Fischmarkt+2-5,+47495+Rheinberg" target="_blank">Fischmarkt 2–5, 47495 Rheinberg</a>
+    <p data-de="Hochzeit Gunderloch" data-en="Wedding Gunderloch">Hochzeit Gunderloch</p>
   </div>
 </section>
 
