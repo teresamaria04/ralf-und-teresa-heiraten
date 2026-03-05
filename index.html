@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Teresa & Ralf – Hochzeit</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
 <style>
 * {
     margin: 0;
@@ -29,7 +30,7 @@ body {
 
 .lang-btn {
     padding: 8px 15px;
-    background-color: #4E684C;
+    background-color: #7A9A78;
     color: white;
     border: none;
     border-radius: 5px;
@@ -41,11 +42,11 @@ body {
 }
 
 .lang-btn:hover {
-    background-color: #6B8B69;
+    background-color: #8DAD8B;
 }
 
 .lang-btn.active {
-    background-color: #6B8B69;
+    background-color: #8DAD8B;
     border: 2px solid white;
 }
 
@@ -203,7 +204,9 @@ header h1, header p {
 
 .toc h2 {
     color: #4E684C;
-    font-size: clamp(1.6em, 4vw, 2.2em);
+    font-family: 'Tangerine', cursive;
+    font-size: clamp(2.5em, 6vw, 3.5em);
+    font-weight: 700;
     margin-bottom: 30px;
     border-bottom: 3px solid #6B8B69;
     padding-bottom: 15px;
@@ -250,7 +253,9 @@ header h1, header p {
 
 .content h2 {
     color: #4E684C;
-    font-size: clamp(1.6em, 4vw, 2.2em);
+    font-family: 'Tangerine', cursive;
+    font-size: clamp(2.5em, 6vw, 3.5em);
+    font-weight: 700;
     margin-bottom: 30px;
     border-bottom: 3px solid #6B8B69;
     padding-bottom: 15px;
@@ -316,21 +321,31 @@ header h1, header p {
     margin-bottom: 3px;
 }
 
-.address-link {
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.btn {
     display: inline-block;
-    margin-top: 8px;
-    padding: 8px 15px;
-    background-color: #4E684C;
+    padding: 10px 18px;
+    background-color: #8DAD8B;
     color: white;
+    border: none;
     border-radius: 5px;
     text-decoration: none;
     font-size: clamp(0.9em, 1.8vw, 1em);
     transition: 0.3s;
+    cursor: pointer;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
 }
 
-.address-link:hover {
-    background-color: #6B8B69;
-    box-shadow: 0 4px 10px rgba(78, 104, 76, 0.3);
+.btn:hover {
+    background-color: #9ABB98;
+    box-shadow: 0 4px 10px rgba(78, 104, 76, 0.2);
 }
 
 .story-section {
@@ -406,7 +421,7 @@ a:hover {
     display: inline-block;
     margin: 10px 20px;
     padding: clamp(8px, 1.5vw, 10px) clamp(15px, 3vw, 20px);
-    background: linear-gradient(135deg, #4E684C 0%, #5D7A5B 100%);
+    background-color: #8DAD8B;
     color: white;
     border-radius: 5px;
     text-decoration: none;
@@ -415,7 +430,7 @@ a:hover {
 }
 
 .nav-link:hover {
-    background: linear-gradient(135deg, #5D7A5B 0%, #6B8B69 100%);
+    background-color: #9ABB98;
     box-shadow: 0 4px 10px rgba(78, 104, 76, 0.3);
 }
 
@@ -471,7 +486,7 @@ a:hover {
         border-radius: 5px;
     }
     .content h2 {
-        font-size: 1.8em;
+        font-size: 2em;
         margin-bottom: 20px;
     }
     .content p {
@@ -496,6 +511,13 @@ a:hover {
     .toc-list {
         grid-template-columns: 1fr;
     }
+    .button-group {
+        flex-direction: column;
+    }
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
 }
 
 /* Kleine Handys */
@@ -516,7 +538,7 @@ a:hover {
         padding: 15px;
     }
     .content h2 {
-        font-size: 1.5em;
+        font-size: 1.8em;
         margin-bottom: 15px;
     }
     .content p {
@@ -532,7 +554,7 @@ a:hover {
         background-attachment: scroll;
     }
     .toc h2 {
-        font-size: 1.6em;
+        font-size: 2em;
     }
 }
 
@@ -585,15 +607,19 @@ a:hover {
 
 <!-- ZUR ZUSAGE -->
 <section class="content" id="zusage">
-  <p data-de="Wir bitten um Rückmeldung bis zum 10. August 2026 in Form einer Nachricht, oder durch Selbsteintragung in die Liste - bitte in alphabetischer Reihenfolge nach den Nachnamen." data-en="We request your response by August 10, 2026 via message or by self-registration in the list - please in alphabetical order by last name.">Wir bitten um Rückmeldung bis zum 10. August 2026 in form einer Nachricht, oder durch Selbsteintragung in die Liste - bitte in alphabetischer Reihenfolge nach den Nachnamen.</p>
-  <a href="https://1drv.ms/x/c/69f6cbaf37066ebb/IQAjqLdmacT9QqiC2yMejxdgAdA57zvE45gLHKE_SAXtLoE?e=LYIO1f" class="nav-link" target="_blank" data-de="📝 Zur Zusage" data-en="📝 RSVP">📝 Zur Zusage</a>
+  <p data-de="Wir bitten um Rückmeldung bis zum 10. August 2026 in Form einer Nachricht, oder durch Selbsteintragung in die Liste - bitte in alphabetischer Reihenfolge nach den Nachnamen." data-en="We request your response by August 10, 2026 via message or by self-registration in the list - please in alphabetical order by last name.">Wir bitten um Rückmeldung bis zum 10. August 2026 in Form einer Nachricht, oder durch Selbsteintragung in die Liste - bitte in alphabetischer Reihenfolge nach den Nachnamen.</p>
+  <div class="button-group">
+    <a href="https://1drv.ms/x/c/69f6cbaf37066ebb/IQAjqLdmacT9QqiC2yMejxdgAdA57zvE45gLHKE_SAXtLoE?e=LYIO1f" class="btn" target="_blank" data-de="📝 Zur Zusage" data-en="📝 RSVP">📝 Zur Zusage</a>
+  </div>
 </section>
 
 <!-- ERINNERUNGEN -->
 <section class="content" id="erinnerungen">
   <h2 data-de="Erinnerungen" data-en="Memories">Erinnerungen</h2>
-  <p data-de="Fotos und Videos von unserem besonderen Tag:" data-en="Photos and videos from our special day:">Fotos und Videos von unserem besonderen Tag:<br>
-  <a href="https://photos.app.goo.gl/9JvJRk1kwqA1CmAXA" target="_blank" data-de="Zur Gallerie" data-en="Link to photos">Link zu den Fotos</a></p>
+  <p data-de="Fotos und Videos von unserem besonderen Tag:" data-en="Photos and videos from our special day:">Fotos und Videos von unserem besonderen Tag:</p>
+  <div class="button-group">
+    <a href="https://photos.app.goo.gl/9JvJRk1kwqA1CmAXA" class="btn" target="_blank" data-de="📸 Link zu den Fotos" data-en="📸 Link to photos">📸 Link zu den Fotos</a>
+  </div>
 </section>
 
 <!-- ABLAUF -->
@@ -619,39 +645,51 @@ a:hover {
     <strong data-de="Trauung:" data-en="Ceremony:">Trauung:</strong>
     <p>Basilika in Kevelaer</p>
     <p>Kapellenpl. 35, 47623 Kevelaer</p>
-    <a href="https://maps.google.com/?q=Kapellenpl+35,+47623+Kevelaer" target="_blank" class="address-link" data-de="Route anzeigen" data-en="Show directions">Route anzeigen</a>
+    <div class="button-group">
+      <a href="https://maps.google.com/?q=Kapellenpl+35,+47623+Kevelaer" target="_blank" class="btn" data-de="🗺️ Route anzeigen" data-en="🗺️ Show directions">🗺️ Route anzeigen</a>
+    </div>
   </div>
   <div class="address-block">
     <strong data-de="Sektempfang:" data-en="Reception:">Sektempfang:</strong>
     <p>Josef–Schotten–Schützenhalle</p>
     <p>Twistedener Str. 285, 47623 Kevelaer</p>
-    <a href="https://maps.google.com/?q=Twistedener+Str+285,+47623+Kevelaer" target="_blank" class="address-link" data-de="Route anzeigen" data-en="Show directions">Route anzeigen</a>
+    <div class="button-group">
+      <a href="https://maps.google.com/?q=Twistedener+Str+285,+47623+Kevelaer" target="_blank" class="btn" data-de="🗺️ Route anzeigen" data-en="🗺️ Show directions">🗺️ Route anzeigen</a>
+    </div>
   </div>
   <div class="address-block">
     <strong data-de="Feier:" data-en="Celebration:">Feier:</strong>
     <p>Kamper Hof</p>
     <p>Kamper Str. 8, 47495 Rheinberg</p>
-    <a href="https://maps.google.com/?q=Kamper+Str+8,+47495+Rheinberg" target="_blank" class="address-link" data-de="Route anzeigen" data-en="Show directions">Route anzeigen</a>
+    <div class="button-group">
+      <a href="https://maps.google.com/?q=Kamper+Str+8,+47495+Rheinberg" target="_blank" class="btn" data-de="🗺️ Route anzeigen" data-en="🗺️ Show directions">🗺️ Route anzeigen</a>
+    </div>
   </div>
   <div class="address-block">
     <strong data-de="Parkmöglichkeiten - Trauung:" data-en="Parking - Ceremony:">Parkmöglichkeiten - Trauung:</strong>
     <p>Basilikastraße 2, 47623 Kevelaer</p>
     <p>Am bhf 55, 47623 Kevelaer</p>
-    <a href="https://maps.google.com/?q=Basilikastraße+2,+47623+Kevelaer" target="_blank" class="address-link" data-de="Route anzeigen" data-en="Show directions">Route anzeigen</a>
+    <div class="button-group">
+      <a href="https://maps.google.com/?q=Basilikastraße+2,+47623+Kevelaer" target="_blank" class="btn" data-de="🗺️ Route anzeigen" data-en="🗺️ Show directions">🗺️ Route anzeigen</a>
+    </div>
   </div>
   <div class="address-block">
     <strong data-de="Parkmöglichkeit - Feier:" data-en="Parking - Celebration:">Parkmöglichkeit - Feier:</strong>
     <p>Parkplatz am Kräuterturm</p>
     <p>Kamperstraße 21</p>
     <p data-de="(kostenlose Entwertung in der Location)" data-en="(free validation at the location)">(kostenlose Entwertung in der Location)</p>
-    <a href="https://maps.google.com/?q=Kamperstraße+21,+47495+Rheinberg" target="_blank" class="address-link" data-de="Route anzeigen" data-en="Show directions">Route anzeigen</a>
+    <div class="button-group">
+      <a href="https://maps.google.com/?q=Kamperstraße+21,+47495+Rheinberg" target="_blank" class="btn" data-de="🗺️ Route anzeigen" data-en="🗺️ Show directions">🗺️ Route anzeigen</a>
+    </div>
   </div>
   <div class="address-block">
     <strong data-de="Übernachtungsmöglichkeit:" data-en="Accommodation:">Übernachtungsmöglichkeit:</strong>
     <p>Hotel Am Fischmarkt</p>
     <p>Fischmarkt 2–5, 47495 Rheinberg</p>
     <p data-de="Stichwort: Gunderloch" data-en="Keyword: Gunderloch">Stichwort: Gunderloch</p>
-    <a href="https://maps.google.com/?q=Hotel+Am+Fischmarkt,+Fischmarkt+2-5,+47495+Rheinberg" target="_blank" class="address-link" data-de="Route anzeigen" data-en="Show directions">Route anzeigen</a>
+    <div class="button-group">
+      <a href="https://maps.google.com/?q=Hotel+Am+Fischmarkt,+Fischmarkt+2-5,+47495+Rheinberg" target="_blank" class="btn" data-de="🗺️ Route anzeigen" data-en="🗺️ Show directions">🗺️ Route anzeigen</a>
+    </div>
   </div>
 </section>
 
@@ -674,7 +712,9 @@ a:hover {
 <section class="content" id="kuchen">
   <h2 data-de="Kuchenbuffet" data-en="Cake Buffet">Kuchenbuffet</h2>
   <p data-de="Über eine Spende zu unserem Kuchenbuffet - mit Rücksprache oder Kontrolle in der Liste - würden wir uns sehr freuen!" data-en="We would be very grateful for a donation to our cake buffet - by arrangement or registration on the list!">Über eine Spende zu unserem Kuchenbuffet - mit Rücksprache oder Kontrolle in der Liste - würden wir uns sehr freuen!</p>
-  <p><a href="https://1drv.ms/x/c/69f6cbaf37066ebb/IQB1VSvJ7wxXTqVonJheuQeWAaEjhPQ_fPi9EMYOWhQoZ4o?e=aPpIUH" target="_blank" data-de="Zur Kuchenliste" data-en="Link to cake buffet">Link zum Kuchenbuffet</a></p>
+  <div class="button-group">
+    <a href="https://1drv.ms/x/c/69f6cbaf37066ebb/IQB1VSvJ7wxXTqVonJheuQeWAaEjhPQ_fPi9EMYOWhQoZ4o?e=aPpIUH" class="btn" target="_blank" data-de="🍰 Link zum Kuchenbuffet" data-en="🍰 Link to cake buffet">🍰 Link zum Kuchenbuffet</a>
+  </div>
 </section>
 
 <!-- GESCHENKE -->
@@ -739,6 +779,13 @@ function switchLanguage(lang) {
     if (pwInput) {
         pwInput.placeholder = pwInput.getAttribute(`data-${lang}`);
     }
+    
+    // Update button texts
+    document.querySelectorAll('.btn').forEach(btn => {
+        if (btn.hasAttribute(`data-${lang}`)) {
+            btn.textContent = btn.getAttribute(`data-${lang}`);
+        }
+    });
 }
 
 // Passwort NICHT speichern - immer fragen!
